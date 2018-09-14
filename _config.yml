@@ -1,8 +1,8 @@
 
 
 # Site settings
-title: Sander Smee
-email: your-email@example.com
+title: Sander
+email: sander.smeman@example.com
 tagline: 'Java and Groovy Stuff'
 description: 'What I learned about <a href="http://java.oracle.com" target="_blank">Java</a>, <a href="http://groovy.codehaus.org/" target="_blank">Groovy</a> and the world.'
 baseurl: "" # the subpath of your site, e.g. /blog
