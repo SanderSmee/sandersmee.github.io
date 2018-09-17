@@ -52,8 +52,8 @@ skinparam noteBackgroundColor<<POST>> #82c599
 skinparam noteBackgroundColor<<PUT>> #e8a65c
 skinparam noteBackgroundColor<<DELETE>> #d95a4e
 skinparam noteBackgroundColor<<HEAD>> #9012fe
-skinparam noteBackgroundColor<<OPTIONS>> #50e3c2
-skinparam noteBackgroundColor<<PATCH>> #0d5aa7
+skinparam noteBackgroundColor<<OPTIONS>> #0d5aa7
+skinparam noteBackgroundColor<<PATCH>> #50e3c2
 ```
 
 The following results in this diagram:
