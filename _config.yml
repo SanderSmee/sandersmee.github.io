@@ -1,5 +1,4 @@
 
-
 # Site settings
 title: Sander
 email: sander.smeman@example.com
@@ -10,7 +9,6 @@ url: "http://sandersmee.github.io" # the base hostname & protocol for your site,
 
 # Build settings
 markdown: kramdown
-
 remote_theme: fongandrew/hydeout
 
 google_analytics: UA-8287349-4
@@ -30,8 +28,4 @@ plugins:
 include: ['_pages']
 permalink: /:year/:month/:title/
 
-sidebar_home_link:  true
-
-compress_html:
-  clippings: all
-
+sidebar_home_link: true

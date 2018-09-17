@@ -3,14 +3,12 @@ layout: page
 ---
 
   <div class="form  form--search">
-    <form id="contact-form" action="">
-      <label class="label" for="search">Search term:</label>
+    <form id="search-form" action="">
       <input class="input" id="search" type="search" name="search" placeholder="e.g. About us" autocomplete="off" />
-
-      <ul class="list posts-list" id="list">
-          <!-- results go here -->
-      </ul>
     </form>
+    <ul class="list posts-list" id="list">
+        <!-- results go here -->
+    </ul>
   </div>
 
   <script type="text/javascript" src="{{ "/assets/scripts/fetch.js" | relative_url }}"></script>

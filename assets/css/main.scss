@@ -1,0 +1,20 @@
+---
+# Jekyll needs front matter for SCSS files
+---
+
+$root-font-family: "PT Sans", Helvetica, Arial, sans-serif;
+
+@import "hydeout";
+
+.form--search {
+    form {
+        display: flex;
+    }
+    input[type='search'] {
+        flex-grow: 1;
+    }
+
+    .posts-list {
+        padding-top: 2em;
+    }
+}
