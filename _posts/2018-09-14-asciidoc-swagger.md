@@ -42,10 +42,10 @@ Below is the `docinfo.html` with the CSS style definitions. It contains colors f
     border-radius: .25em;
 }
 
-.http.get  {background-color: #7baff2;}
-.http.post {background-color: #82c599;}
-.http.put  {background-color: #e8a65c;}
-.http.delete {background-color: #d95a4e;}
+.http.get  {background-color: #61affe;}
+.http.post {background-color: #49cc90;}
+.http.put  {background-color: #fca130;}
+.http.delete {background-color: #f93e3e;}
 .http.head {background-color: #9012fe;}
 .http.options {background-color: #0d5aa7;}
 .http.patch {background-color: #50e3c2;}

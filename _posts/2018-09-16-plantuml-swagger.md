@@ -47,10 +47,10 @@ skinparam note<<HTTP>> {
   fontColor #fff
   shadowing false
 }
-skinparam noteBackgroundColor<<GET>> #7baff2
-skinparam noteBackgroundColor<<POST>> #82c599
-skinparam noteBackgroundColor<<PUT>> #e8a65c
-skinparam noteBackgroundColor<<DELETE>> #d95a4e
+skinparam noteBackgroundColor<<GET>> #61affe
+skinparam noteBackgroundColor<<POST>> #49cc90
+skinparam noteBackgroundColor<<PUT>> #fca130
+skinparam noteBackgroundColor<<DELETE>> #f93e3e
 skinparam noteBackgroundColor<<HEAD>> #9012fe
 skinparam noteBackgroundColor<<OPTIONS>> #0d5aa7
 skinparam noteBackgroundColor<<PATCH>> #50e3c2
