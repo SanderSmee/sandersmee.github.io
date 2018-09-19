@@ -35,6 +35,10 @@ plugins:
   - asciidoctor-html5s
 
 include: ['_pages']
+exclude:
+- Rakefile
+- vendor
+
 permalink: /:year/:month/:title/
 
 sidebar_home_link: true
