@@ -1,0 +1,75 @@
+
+
+[
+  
+  
+    
+    
+      {
+        "title": "Combining Spock 1.2 and Junit 5 tests",
+        "excerpt": "Great projects keep moving forward. JUnit5 is available since september 2017 and Spock 1.2 is almost complete.\nSince Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.\n\n",
+        "content": "Great projects keep moving forward. JUnit5 is available since september 2017 and Spock 1.2 is almost complete.\nSince Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.\n\nAs it turns out, it’s quite easy to make that happen. JUnit5 comes with a vintage engine to run junit4 based tests. If that is available on the test classpath, your Spock tests run like on junit4.\n\nThe following example is based on gradle. It declares the dependencies and instructs gradle to use the JUnit5 JUnitPlatform to execute the tests.\n\nI have a sample repository that also includes a maven pom.xml.\nThe repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.\n\n...\ndependencies {\n    testCompile \"org.spockframework:spock-core:1.2-RC2-groovy-2.5\"\n\n    implementation \"org.junit.jupiter:junit-jupiter-api:5.3.0\"\n    testRuntimeOnly \"org.junit.vintage:junit-vintage-engine:5.3.0\"\n}\n\ntest {\n    useJUnitPlatform()\n}\n...\n\n\n\n  Written with Spock 1.2 RC2, JUnit 5.3.0, and Gradle 4.10\n\n\n",
+        "url": "/2018/09/spock-jupiter/"
+      },
+    
+      {
+        "title": "Asciidoc labels like swagger-ui",
+        "excerpt": "If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; Springfox, or Spring REST Docs. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.\n\n",
+        "content": "If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; Springfox, or Spring REST Docs. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.\n\nI wanted to create some connection or similarity between the swagger-ui and asciidoc documentation. I came across a blogpost by mrhaki that inspired me to extend the snippets in his example.\n\nUsing the following snippets, it’s possible to label HTTP verbs in the Spring REST Docs in the same colors as in the swagger-ui.\n\n= Attributes with HTTP labels\n// Include contents of docinfo.html in HTML head with CSS style definitions\n:docinfo1:\n\n// Document attributes with styling\n:http-get: pass:quotes[[.http.get]#GET#]\n:http-post: pass:quotes[[.http.post]#POST#]\n:http-put: pass:quotes[[.http.put]#PUT#]\n// More can be added for the other HTTP verbs\n\n== Sample section\n\n=== {http-get} Request\n=== {http-post} Create resource\n=== {http-put} Modify resource\n\n\nBelow is the docinfo.html with the CSS style definitions. It contains colors for all verbs, corresponding to the default swagger-ui colors.\n&lt;style&gt;\n.http {\n    color: #fff;\n    background-color: beige;\n    padding: .1em .6em;\n    font-size: .75em;\n    font-weight: 700;\n    text-transform: uppercase;\n    border-radius: .25em;\n}\n\n.http.get  {background-color: #61affe;}\n.http.post {background-color: #49cc90;}\n.http.put  {background-color: #fca130;}\n.http.delete {background-color: #f93e3e;}\n.http.head {background-color: #9012fe;}\n.http.options {background-color: #0d5aa7;}\n.http.patch {background-color: #50e3c2;}\n&lt;/style&gt;\n\n\nThis gives the following result in the Spring REST Docs output.\n\n\n\n\n  Written with Asciidoc 1.5.6\n\n\n",
+        "url": "/2018/09/asciidoc-swagger/"
+      },
+    
+      {
+        "title": "Plantuml labels like swagger-ui",
+        "excerpt": "It’s great to have Asciidoc labels like swagger-ui in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use Plantuml diagrams, e.g. to illustrate the sequence of interaction between microservices.\nIs it possible to label those interactions like swagger-ui, just as I now can in asciidoc?\n\n",
+        "content": "It’s great to have Asciidoc labels like swagger-ui in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use Plantuml diagrams, e.g. to illustrate the sequence of interaction between microservices.\nIs it possible to label those interactions like swagger-ui, just as I now can in asciidoc?\n\nIn Plantuml it’s possible to declare macros. I created a reusable macro for a message in a sequence diagram, that has a note next to it. By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.\n\n@startuml\n!definelong Request(verb, msg, desc)\nmsg : desc\nrnote &lt;&lt;verb&gt;&gt;&lt;&lt;HTTP&gt;&gt; left color\n\"\"verb\"\"\nend note\n!enddefinelong\n\n!define GET(msg, desc) Request(\" GET \", msg, desc)\n!define POST(msg, desc) Request(\" POST \", msg, desc)\n!define PUT(msg, desc) Request(\" PUT \", msg, desc)\n\nactor User\nUser --&gt; Browser : click resource\nGET(Browser --&gt; Resource, /path/to/resource)\nBrowser &lt;-- Resource : response\nPOST(Browser -&gt; Resource, '\"\"JSON\"\" new Resource')\nnote right\n  more note to\n  this message\nend note\nUser &lt;-- Browser : display resource\n@enduml\n\n\nTo give the note a style resembling a label I used the following styling. First some generic styling for each label, based on the &lt;&lt;HTTP&gt;&gt; stereotype. Specific styling for a verb goes through its own &lt;&lt;verb&gt;&gt; stereotype.\n\nskinparam note&lt;&lt;HTTP&gt;&gt; {\n  textAlignment center\n  backgroundColor #darkgrey\n  borderColor transparent\n  fontName monospaced\n  fontColor #fff\n  shadowing false\n}\nskinparam noteBackgroundColor&lt;&lt;GET&gt;&gt; #61affe\nskinparam noteBackgroundColor&lt;&lt;POST&gt;&gt; #49cc90\nskinparam noteBackgroundColor&lt;&lt;PUT&gt;&gt; #fca130\nskinparam noteBackgroundColor&lt;&lt;DELETE&gt;&gt; #f93e3e\nskinparam noteBackgroundColor&lt;&lt;HEAD&gt;&gt; #9012fe\nskinparam noteBackgroundColor&lt;&lt;OPTIONS&gt;&gt; #0d5aa7\nskinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2\n\n\nThe following results in this diagram:\n\n\n\n\n  Written with Plantuml 1.2018.10\n\n\n",
+        "url": "/2018/09/plantuml-swagger/"
+      },
+    
+  
+  
+  
+  {
+    "title": "About",
+    "excerpt": "\n",
+    "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com\n\nYou can find the source code for Minima at GitHub:\njekyll /\nminima\n\nYou can find the source code for Jekyll at GitHub:\njekyll /\njekyll\n\n",
+    "url": "/about/"
+  },
+  
+  {
+    "title": "Documentation",
+    "excerpt": "\n",
+    "content": "\n",
+    "url": "/category/documentation/"
+  },
+  
+  {
+    "title": "Home",
+    "excerpt": "\n",
+    "content": "\n",
+    "url": "/"
+  },
+  
+  {
+    "title": "Programming",
+    "excerpt": "\n",
+    "content": "\n",
+    "url": "/category/programming/"
+  },
+  
+  {
+    "title": "Search",
+    "excerpt": "\n",
+    "content": "\n",
+    "url": "/search/"
+  },
+  
+  {
+    "title": "Tags",
+    "excerpt": "\n",
+    "content": "\n",
+    "url": "/tags/"
+  }
+  
+]
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://sandersmee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sandersmee.github.io/" rel="alternate" type="text/html" /><updated>2018-09-19T20:56:07+00:00</updated><id>http://sandersmee.github.io/</id><title type="html">Sander</title><subtitle>What I learned about &lt;a href=&quot;http://java.oracle.com&quot; target=&quot;_blank&quot;&gt;Java&lt;/a&gt;, &lt;a href=&quot;http://groovy.codehaus.org/&quot; target=&quot;_blank&quot;&gt;Groovy&lt;/a&gt; and the world.</subtitle><author><name>Sander</name></author><entry><title type="html">Plantuml labels like swagger-ui</title><link href="http://sandersmee.github.io/2018/09/plantuml-swagger/" rel="alternate" type="text/html" title="Plantuml labels like swagger-ui" /><published>2018-09-16T00:00:00+00:00</published><updated>2018-09-16T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/plantuml-swagger</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/plantuml-swagger/">&lt;p&gt;It’s great to have &lt;a href=&quot;/2018/09/asciidoc-swagger/&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices.
+Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;
+
+&lt;p&gt;In Plantuml it’s possible to declare macros. I created a reusable macro for a message in a sequence diagram, that has a note next to it. By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@startuml
+!definelong Request(verb, msg, desc)
+msg : desc
+rnote &amp;lt;&amp;lt;verb&amp;gt;&amp;gt;&amp;lt;&amp;lt;HTTP&amp;gt;&amp;gt; left color
+&quot;&quot;verb&quot;&quot;
+end note
+!enddefinelong
+
+!define GET(msg, desc) Request(&quot; GET &quot;, msg, desc)
+!define POST(msg, desc) Request(&quot; POST &quot;, msg, desc)
+!define PUT(msg, desc) Request(&quot; PUT &quot;, msg, desc)
+
+actor User
+User --&amp;gt; Browser : click resource
+GET(Browser --&amp;gt; Resource, /path/to/resource)
+Browser &amp;lt;-- Resource : response
+POST(Browser -&amp;gt; Resource, '&quot;&quot;JSON&quot;&quot; new Resource')
+note right
+  more note to
+  this message
+end note
+User &amp;lt;-- Browser : display resource
+@enduml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To give the note a style resembling a label I used the following styling. First some generic styling for each label, based on the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;HTTP&amp;gt;&amp;gt;&lt;/code&gt; stereotype. Specific styling for a verb goes through its own &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&amp;lt;verb&amp;gt;&amp;gt;&lt;/code&gt; stereotype.&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;skinparam note&amp;lt;&amp;lt;HTTP&amp;gt;&amp;gt; {
+  textAlignment center
+  backgroundColor #darkgrey
+  borderColor transparent
+  fontName monospaced
+  fontColor #fff
+  shadowing false
+}
+skinparam noteBackgroundColor&amp;lt;&amp;lt;GET&amp;gt;&amp;gt; #61affe
+skinparam noteBackgroundColor&amp;lt;&amp;lt;POST&amp;gt;&amp;gt; #49cc90
+skinparam noteBackgroundColor&amp;lt;&amp;lt;PUT&amp;gt;&amp;gt; #fca130
+skinparam noteBackgroundColor&amp;lt;&amp;lt;DELETE&amp;gt;&amp;gt; #f93e3e
+skinparam noteBackgroundColor&amp;lt;&amp;lt;HEAD&amp;gt;&amp;gt; #9012fe
+skinparam noteBackgroundColor&amp;lt;&amp;lt;OPTIONS&amp;gt;&amp;gt; #0d5aa7
+skinparam noteBackgroundColor&amp;lt;&amp;lt;PATCH&amp;gt;&amp;gt; #50e3c2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following results in this diagram:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/plantuml-httplabels.png&quot; alt=&quot;Plantuml with httplabels&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Written with Plantuml 1.2018.10&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="plantuml" /><category term="asciidoc" /><category term="swagger-ui" /><summary type="html">It’s great to have Asciidoc labels like swagger-ui in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use Plantuml diagrams, e.g. to illustrate the sequence of interaction between microservices. Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?</summary></entry><entry><title type="html">Asciidoc labels like swagger-ui</title><link href="http://sandersmee.github.io/2018/09/asciidoc-swagger/" rel="alternate" type="text/html" title="Asciidoc labels like swagger-ui" /><published>2018-09-14T00:00:00+00:00</published><updated>2018-09-14T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/asciidoc-swagger</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/asciidoc-swagger/">&lt;p&gt;If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot;&gt;Spring REST Docs&lt;/a&gt;. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.&lt;/p&gt;
+
+&lt;p&gt;I wanted to create some connection or similarity between the swagger-ui and asciidoc documentation. I came across a &lt;a href=&quot;http://mrhaki.blogspot.com/2018/09/awesome-asciidoctor-document-attributes.html&quot;&gt;blogpost by mrhaki&lt;/a&gt; that inspired me to extend the snippets in his example.&lt;/p&gt;
+
+&lt;p&gt;Using the following snippets, it’s possible to label HTTP verbs in the Spring REST Docs in the same colors as in the swagger-ui.&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;= Attributes with HTTP labels
+// Include contents of docinfo.html in HTML head with CSS style definitions
+:docinfo1:
+
+// Document attributes with styling
+:http-get: pass:quotes[[.http.get]#GET#]
+:http-post: pass:quotes[[.http.post]#POST#]
+:http-put: pass:quotes[[.http.put]#PUT#]
+// More can be added for the other HTTP verbs
+
+== Sample section
+
+=== {http-get} Request
+=== {http-post} Create resource
+=== {http-put} Modify resource
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Below is the &lt;code class=&quot;highlighter-rouge&quot;&gt;docinfo.html&lt;/code&gt; with the CSS style definitions. It contains colors for all verbs, corresponding to the default swagger-ui colors.&lt;/p&gt;
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;beige&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.1em&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.6em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.75em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;700&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;uppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;.25em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.http.get&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#61affe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.post&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#49cc90&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.put&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fca130&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.delete&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f93e3e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.head&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#9012fe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.options&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#0d5aa7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.http.patch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#50e3c2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This gives the following result in the Spring REST Docs output.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/posts/asciidoc-httplabels.png&quot; alt=&quot;Asciidoc with httplabels&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Written with Asciidoc 1.5.6&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="asciidoc" /><category term="swagger-ui" /><summary type="html">If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; Springfox, or Spring REST Docs. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.</summary></entry><entry><title type="html">Combining Spock 1.2 and Junit 5 tests</title><link href="http://sandersmee.github.io/2018/09/spock-jupiter/" rel="alternate" type="text/html" title="Combining Spock 1.2 and Junit 5 tests" /><published>2018-09-06T00:00:00+00:00</published><updated>2018-09-06T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/spock-jupiter</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/spock-jupiter/">&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot;&gt;Spock&lt;/a&gt; 1.2 is almost complete.
+Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
+
+&lt;p&gt;As it turns out, it’s quite easy to make that happen. JUnit5 comes with a &lt;em&gt;vintage&lt;/em&gt; engine to run junit4 based tests. If that is available on the test classpath, your Spock tests run like on junit4.&lt;/p&gt;
+
+&lt;p&gt;The following example is based on gradle. It declares the dependencies and instructs gradle to use the JUnit5 &lt;code class=&quot;highlighter-rouge&quot;&gt;JUnitPlatform&lt;/code&gt; to execute the tests.&lt;/p&gt;
+
+&lt;p&gt;I have a &lt;a href=&quot;http://github.com/sandersmee/spock-jupiter&quot;&gt;sample repository&lt;/a&gt; that also includes a maven &lt;code class=&quot;highlighter-rouge&quot;&gt;pom.xml&lt;/code&gt;.
+The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.spockframework:spock-core:1.2-RC2-groovy-2.5&quot;&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.jupiter:junit-jupiter-api:5.3.0&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;testRuntimeOnly&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.vintage:junit-vintage-engine:5.3.0&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;useJUnitPlatform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Written with Spock 1.2 RC2, JUnit 5.3.0, and Gradle 4.10&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="junit" /><category term="spock" /><category term="gradle" /><summary type="html">Great projects keep moving forward. JUnit5 is available since september 2017 and Spock 1.2 is almost complete. Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.</summary></entry></feed>
