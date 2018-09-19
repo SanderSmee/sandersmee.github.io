@@ -8,6 +8,13 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    asciidoctor (1.5.7.1)
+    asciidoctor-html5s (0.1.0.beta.8)
+      asciidoctor (~> 1.5.5)
+      thread_safe (~> 0.3.4)
+    asciidoctor-rouge (0.3.1)
+      asciidoctor (~> 1.5.6)
+      rouge (~> 2.2)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -100,6 +107,9 @@ GEM
       pathutil (~> 0.9)
       rouge (>= 1.7, < 4)
       safe_yaml (~> 1.0)
+    jekyll-asciidoc (2.1.0)
+      asciidoctor (>= 1.5.0)
+      jekyll (>= 2.3.0)
     jekyll-avatar (0.6.0)
       jekyll (~> 3.0)
     jekyll-coffeescript (1.1.1)
@@ -212,6 +222,9 @@ GEM
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
+    rake (10.5.0)
+    rake-jekyll (1.1.0)
+      rake (~> 10.0)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -242,10 +255,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor-html5s
+  asciidoctor-rouge
   github-pages
+  jekyll-asciidoc
   jekyll-feed (~> 0.6)
   jekyll-remote-theme
   minima (~> 2.0)
+  rake-jekyll (~> 1.1.0)
   tzinfo-data
 
 BUNDLED WITH
