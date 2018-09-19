@@ -17,7 +17,6 @@ asciidoctor:
     source-highlighter: rouge
     icons: font
 
-
 google_analytics: UA-8287349-4
 author:
   name: 'Sander'
