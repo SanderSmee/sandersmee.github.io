@@ -1,8 +1,14 @@
 language: ruby
 rvm:
-  - 2.2.0
+  - 2.5.1
 sudo: false
 script: bundle exec rake deploy
+
+# safelist
+branches:
+  only:
+  - master
+  - jekyll-asciidoc
 
 env:
   global:
