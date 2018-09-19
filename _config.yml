@@ -12,6 +12,7 @@ markdown: kramdown
 remote_theme: fongandrew/hydeout
 
 asciidoctor:
+  backend: html5s
   attributes:
     source-highlighter: rouge
     icons: font
@@ -32,6 +33,7 @@ plugins:
   - jekyll-paginate
   - jekyll-asciidoc
   - asciidoctor-rouge
+  - asciidoctor-html5s
 
 include: ['_pages']
 permalink: /:year/:month/:title/

@@ -9,6 +9,9 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     asciidoctor (1.5.7.1)
+    asciidoctor-html5s (0.1.0.beta.8)
+      asciidoctor (~> 1.5.5)
+      thread_safe (~> 0.3.4)
     asciidoctor-rouge (0.3.1)
       asciidoctor (~> 1.5.6)
       rouge (~> 2.2)
@@ -249,6 +252,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asciidoctor-html5s
   asciidoctor-rouge
   github-pages
   jekyll-asciidoc
