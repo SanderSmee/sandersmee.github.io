@@ -38,6 +38,8 @@ include: ['_pages']
 exclude:
 - Rakefile
 - vendor
+- Gemfile
+- Gemfile.lock
 
 permalink: /:year/:month/:title/
 

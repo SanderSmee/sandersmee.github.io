@@ -1,11 +1,12 @@
 language: ruby
 rvm:
 - 2.5.1
+cache: bundler
 sudo: false
 install:
 - bundle install
 
-script: bundle exec rake deploy --quiet
+script: bundle exec rake deploy
 
 # safelist
 branches:
