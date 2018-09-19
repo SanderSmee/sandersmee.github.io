@@ -11,6 +11,12 @@ url: "http://sandersmee.github.io" # the base hostname & protocol for your site,
 markdown: kramdown
 remote_theme: fongandrew/hydeout
 
+asciidoctor:
+  attributes:
+    source-highlighter: rouge
+    icons: font
+
+
 google_analytics: UA-8287349-4
 author:
   name: 'Sander'
@@ -24,6 +30,8 @@ plugins:
   - jekyll-remote-theme
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-asciidoc
+  - asciidoctor-rouge
 
 include: ['_pages']
 permalink: /:year/:month/:title/
