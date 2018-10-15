@@ -1,8 +1,8 @@
-const version = '20180919210954';
+const version = '20181015182153';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/2018/09/plantuml-swagger/","/2018/09/asciidoc-swagger/","/2018/09/spock-jupiter/","/about/","/category/documentation/","/","/assets/css/main.css","/category/programming/","/search/","/assets/search.json","/tags/","/feed.xml",//   "", "/assets/default-offline-image.png",
+  return ["/2018/10/easily-build-your-own-tech-radar/","/2018/09/plantuml-swagger/","/2018/09/asciidoc-swagger/","/2018/09/spock-jupiter/","/about/","/category/documentation/","/","/assets/css/main.css","/category/programming/","/search/","/assets/search.json","/tags/","/feed.xml",//   "", "/assets/default-offline-image.png",
       "/assets/scripts/fetch.js"
   ]
 }

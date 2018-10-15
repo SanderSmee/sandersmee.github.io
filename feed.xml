@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://sandersmee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sandersmee.github.io/" rel="alternate" type="text/html" /><updated>2018-09-19T21:09:54+00:00</updated><id>http://sandersmee.github.io/</id><title type="html">Sander</title><subtitle>What I learned about &lt;a href=&quot;http://java.oracle.com&quot; target=&quot;_blank&quot;&gt;Java&lt;/a&gt;, &lt;a href=&quot;http://groovy.codehaus.org/&quot; target=&quot;_blank&quot;&gt;Groovy&lt;/a&gt; and the world.</subtitle><author><name>Sander</name></author><entry><title type="html">Plantuml labels like swagger-ui</title><link href="http://sandersmee.github.io/2018/09/plantuml-swagger/" rel="alternate" type="text/html" title="Plantuml labels like swagger-ui" /><published>2018-09-16T00:00:00+00:00</published><updated>2018-09-16T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/plantuml-swagger</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/plantuml-swagger/">&lt;p&gt;It’s great to have &lt;a href=&quot;/2018/09/asciidoc-swagger/&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://sandersmee.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://sandersmee.github.io/" rel="alternate" type="text/html" /><updated>2018-10-15T18:21:53+00:00</updated><id>http://sandersmee.github.io/</id><title type="html">Sander</title><subtitle>What I learned about &lt;a href=&quot;http://java.oracle.com&quot; target=&quot;_blank&quot;&gt;Java&lt;/a&gt;, &lt;a href=&quot;http://groovy.codehaus.org/&quot; target=&quot;_blank&quot;&gt;Groovy&lt;/a&gt; and the world.</subtitle><author><name>Sander</name></author><entry><title type="html">Easily build your own tech radar</title><link href="http://sandersmee.github.io/2018/10/easily-build-your-own-tech-radar/" rel="alternate" type="text/html" title="Easily build your own tech radar" /><published>2018-10-15T00:00:00+00:00</published><updated>2018-10-15T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/10/easily-build-your-own-tech-radar</id><content type="html" xml:base="http://sandersmee.github.io/2018/10/easily-build-your-own-tech-radar/">&lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices.
+For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option.
+Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;
+
+&lt;p&gt;To accomplish that I took the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a folder to put the tech radar into: &lt;code class=&quot;highlighter-rouge&quot;&gt;${project-folder}&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Start with the &lt;a href=&quot;https://html5boilerplate.com&quot;&gt;HTML5 Boilerplate&lt;/a&gt; index.html file, and put it into &lt;code class=&quot;highlighter-rouge&quot;&gt;${project-folder}&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Insert the snippets as documented at &lt;a href=&quot;https://github.com/zalando/tech-radar&quot;&gt;Zalando Tech Radar&lt;/a&gt;, with one adjustment.
+I don’t fill the &lt;code class=&quot;highlighter-rouge&quot;&gt;entries&lt;/code&gt; array with entries, but will do that later on, from the input in the CSV file.&lt;/li&gt;
+  &lt;li&gt;Create a CSV file (&lt;code class=&quot;highlighter-rouge&quot;&gt;${project-folder}/data.csv&lt;/code&gt;)as input for the tech radar.
+It has columns for the ring and quadrant where a technology should be put, and an indicator for movement.
+The names of the rings and quadrant should equal those in the configuration copied from the Zalando example.
+If you changed them, use those names instead.
+The movement indicator is (up, none, down) and in the next step translated in to value understood by the radar.
+The CSV will be translated into entries for the radar.
+    &lt;pre&gt;&lt;code class=&quot;language-csv&quot;&gt;name,ring,quadrant,moved,link
+Java,INNER,Bottom Right,none,../docs/java.html
+Typescript,SECOND,Top Left,up,../docs/typescript.html
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add the following D3.js library to parse CSV:
+    &lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://d3js.org/d3-dsv.v1.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;This library provides functions to parse CSV file(s) into a map structure per row in the file.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Create a function to transform a row in the CSV into an entry for the tech radar:
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;toEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;quadrant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Bottom Right'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Bottom Left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Top Left'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Top Right'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quadrant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;ring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'INNER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'SECOND'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'THIRD'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'OUTER'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;moved&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'down'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'none'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'up'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;indexOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;moved&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This is the diversion from the steps in the Zalando tech radar description.
+Wrap the &lt;code class=&quot;highlighter-rouge&quot;&gt;radar_visualization()&lt;/code&gt; function a custom one, that takes an array of entry, to render the transformed rows, e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;draw_radar(entries)&lt;/code&gt;.
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;draw_radar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;my_entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;radar_visualization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+         &lt;span class=&quot;na&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_entries&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Finally glue everything together to fetch the CSV, parse and transform it, and draw the entries.
+The code below uses the functions I defined in the previous steps
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'./data.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;csvParse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;toEntry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+         &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;draw_radar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;entries&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Sander</name></author><category term="documentation" /><category term="architecture" /><summary type="html">The Thoughtworks Technology Radar is well known for showing technology trends and choices. For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option. Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.</summary></entry><entry><title type="html">Plantuml labels like swagger-ui</title><link href="http://sandersmee.github.io/2018/09/plantuml-swagger/" rel="alternate" type="text/html" title="Plantuml labels like swagger-ui" /><published>2018-09-16T00:00:00+00:00</published><updated>2018-09-16T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/plantuml-swagger</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/plantuml-swagger/">&lt;p&gt;It’s great to have &lt;a href=&quot;/2018/09/asciidoc-swagger/&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices.
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;
 
 &lt;p&gt;In Plantuml it’s possible to declare macros. I created a reusable macro for a message in a sequence diagram, that has a note next to it. By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.&lt;/p&gt;
@@ -104,30 +168,41 @@ skinparam noteBackgroundColor&amp;lt;&amp;lt;PATCH&amp;gt;&amp;gt; #50e3c2
 
 &lt;blockquote&gt;
   &lt;p&gt;Written with Asciidoc 1.5.6&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="asciidoc" /><category term="swagger-ui" /><summary type="html">If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; Springfox, or Spring REST Docs. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.</summary></entry><entry><title type="html">Combining Spock 1.2 and Junit 5 tests</title><link href="http://sandersmee.github.io/2018/09/spock-jupiter/" rel="alternate" type="text/html" title="Combining Spock 1.2 and Junit 5 tests" /><published>2018-09-06T00:00:00+00:00</published><updated>2018-09-06T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/spock-jupiter</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/spock-jupiter/">&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot;&gt;Spock&lt;/a&gt; 1.2 is almost complete.
+&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="asciidoc" /><category term="swagger-ui" /><summary type="html">If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; Springfox, or Spring REST Docs. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.</summary></entry><entry><title type="html">Combining Spock 1.2 and Junit 5 tests</title><link href="http://sandersmee.github.io/2018/09/spock-jupiter/" rel="alternate" type="text/html" title="Combining Spock 1.2 and Junit 5 tests" /><published>2018-09-06T00:00:00+00:00</published><updated>2018-10-01T00:00:00+00:00</updated><id>http://sandersmee.github.io/2018/09/spock-jupiter</id><content type="html" xml:base="http://sandersmee.github.io/2018/09/spock-jupiter/">&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018.
 Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
 
 &lt;p&gt;As it turns out, it’s quite easy to make that happen. JUnit5 comes with a &lt;em&gt;vintage&lt;/em&gt; engine to run junit4 based tests. If that is available on the test classpath, your Spock tests run like on junit4.&lt;/p&gt;
 
-&lt;p&gt;The following example is based on gradle. It declares the dependencies and instructs gradle to use the JUnit5 &lt;code class=&quot;highlighter-rouge&quot;&gt;JUnitPlatform&lt;/code&gt; to execute the tests.&lt;/p&gt;
+&lt;p&gt;The following example is based on gradle, and is the minimum for getting started in gradle. It declares the dependencies and instructs gradle to use the JUnit5 &lt;code class=&quot;highlighter-rouge&quot;&gt;JUnitPlatform&lt;/code&gt; to execute the tests.&lt;/p&gt;
 
-&lt;p&gt;I have a &lt;a href=&quot;http://github.com/sandersmee/spock-jupiter&quot;&gt;sample repository&lt;/a&gt; that also includes a maven &lt;code class=&quot;highlighter-rouge&quot;&gt;pom.xml&lt;/code&gt;.
-The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.&lt;/p&gt;
+&lt;p&gt;I have a &lt;a href=&quot;http://github.com/sandersmee/spock-jupiter&quot;&gt;sample repository&lt;/a&gt; that includes a maven &lt;code class=&quot;highlighter-rouge&quot;&gt;pom.xml&lt;/code&gt;. The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.&lt;/p&gt;
 
-&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;plugins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'java'&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'groovy'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;mavenCentral&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sourceCompatibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.8&lt;/span&gt;
+
 &lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.spockframework:spock-core:1.2-RC2-groovy-2.5&quot;&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.jupiter:junit-jupiter-api:5.3.0&quot;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;testRuntimeOnly&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.vintage:junit-vintage-engine:5.3.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;testCompile&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.spockframework:spock-core:1.2-groovy-2.5&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;implementation&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.jupiter:junit-jupiter-api:5.3.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;testRuntimeOnly&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;org.junit.vintage:junit-vintage-engine:5.3.0&quot;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;useJUnitPlatform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;useJUnitPlatform&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Written with Spock 1.2 RC2, JUnit 5.3.0, and Gradle 4.10&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="junit" /><category term="spock" /><category term="gradle" /><summary type="html">Great projects keep moving forward. JUnit5 is available since september 2017 and Spock 1.2 is almost complete. Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.</summary></entry></feed>
+  &lt;p&gt;Written with Spock 1.2, JUnit 5.3.0, and Gradle 4.10&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2018-10-01: Update for Spock 1.2 release&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Sander</name></author><category term="junit" /><category term="spock" /><category term="gradle" /><summary type="html">Great projects keep moving forward. JUnit5 is available since september 2017 and Spock 1.2 was completed in september 2018. Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.</summary></entry></feed>
