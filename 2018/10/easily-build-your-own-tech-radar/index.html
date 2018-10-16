@@ -33,6 +33,7 @@
 
   <!-- Additional head bits without overriding original head -->
 
+<script async type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
 
 </head>
 
@@ -369,7 +370,30 @@ The code below uses the functions I defined in the previous steps
 
     </main>
 
-    <!-- Optional footer content -->
+    <script>
+    (function (document, Clipboard) {
+
+        var $codes = document.querySelectorAll('pre');
+
+        function addCopy(element) {
+            var copy = document.createElement("button");
+            copy.className = "copy btn is-pulled-right";
+            copy.textContent = "copy";
+            element.append(copy);
+        }
+
+        for (var i = 0, len = $codes.length; i < len; i++) {
+            addCopy($codes[i]);
+        }
+
+
+        new Clipboard('.copy', {
+            target: function (trigger) {
+                return trigger.previousElementSibling;
+            }
+        });
+    })(document, Clipboard);
+</script>
 
   </body>
 </html>

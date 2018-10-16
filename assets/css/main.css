@@ -419,3 +419,5 @@ button.disqus-load { margin-top: 1em; }
 .form--search form { display: flex; }
 .form--search input[type='search'] { flex-grow: 1; }
 .form--search .posts-list { padding-top: 2em; }
+
+.is-pulled-right { float: right; }
