@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "Reduce the code to noise ratio of maven POMs"
+category: programming
+tags: [maven, yaml]
+date: 2018-10-29
+---
+
+I really like maven for the structured way it provides for defining and building a project.
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.
+
+Looking for a less verbose way to declare a maven POM, I discovered [polyglot maven][polyglot].
+It are maven extensions that allow the maven POM to eb written in another dialect than XML.
+Since you see YAML more and more I decided to try that dialect, and see if my maven descriptor would be clearer.
+
+The minimum version of maven this works on, is maven 3.3.1. Since that version it's possible to provide per project configuration. or extension of maven.
+
+1. Create a directory to work in, `{projectdir}`, and change into it.
+
+2.  To register the extensions for maven, create a file `{projectdir}/.mvn/extensions.xml` and add the extension:
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <extensions>
+        <extension>
+            <groupId>io.takari.polyglot</groupId>
+            <artifactId>polyglot-yaml</artifactId>
+            <version>0.3.1</version>
+        </extension>
+    </extensions>
+    ```
+
+3.  Now it's possile to write the maven POM in YAML, `pom.yml`:
+    ```yaml
+    modelVersion: 4.0.0
+    groupId: demo.maven.polyglot
+    artifactId: yml-demo
+    version: 1.0-SNAPSHOT
+    name: 'YAML Demo'
+
+    dependencies:
+    - { groupId: org.junit.jupiter, artifactId: junit-jupiter, version: 5.3.1, scope: test }
+    plugins:
+    - artifactId: maven-compiler-plugin
+      version: 3.8.0
+      configuration:
+        source: 1.8
+        target: 1.8
+    - artifactId: maven-surefire-plugin
+      version: 2.22.1
+    ```
+
+    By using the yaml inline map. or dictionary notation declaring a dependency uses way less characters then when using XML.
+
+## Limitations
+Although this looks great, there are some limitations to using maven polyglot.
+Mixing different dialects is not possible, and plugins depending on the XML format will not work with another dialect.
+I also could not get a multi module project working with polyglot yaml.
+
+[polyglot]: https://github.com/takari/polyglot-maven
