@@ -22,3 +22,8 @@ $root-font-family: "PT Sans", Helvetica, Arial, sans-serif;
 .is-pulled-right {
     float: right;
 }
+
+.listingblock {
+    .content { padding: 0;}
+    .title { font-style: italic; }
+}
