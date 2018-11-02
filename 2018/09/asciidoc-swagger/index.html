@@ -33,7 +33,10 @@
 
   <!-- Additional head bits without overriding original head -->
 
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css" />
+
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
@@ -244,13 +247,22 @@
 
 
   <div class="post-body">
-    <p>If you’re building a rest api with spring-boot and want to document the api, you have two good options to do this; <a href="http://springfox.github.io/springfox/">Springfox</a>, or <a href="https://spring.io/projects/spring-restdocs">Spring REST Docs</a>. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what’s best is that you can simply combine the two in a project.</p>
-
-<p>I wanted to create some connection or similarity between the swagger-ui and asciidoc documentation. I came across a <a href="http://mrhaki.blogspot.com/2018/09/awesome-asciidoctor-document-attributes.html">blogpost by mrhaki</a> that inspired me to extend the snippets in his example.</p>
-
-<p>Using the following snippets, it’s possible to label HTTP verbs in the Spring REST Docs in the same colors as in the swagger-ui.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>= Attributes with HTTP labels
+    <div class="paragraph">
+<p>If you&#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; <a href="http://springfox.github.io/springfox/">Springfox</a>, or <a href="https://spring.io/projects/spring-restdocs">Spring REST Docs</a>.
+Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc.
+And what&#8217;s best is that you can simply combine the two in a project.</p>
+</div>
+<div class="paragraph">
+<p>I wanted to create some connection or similarity between the swagger-ui and asciidoc documentation.
+I came across a <a href="http://mrhaki.blogspot.com/2018/09/awesome-asciidoctor-document-attributes.html">blogpost by mrhaki</a> that inspired me to extend the snippets in his example.</p>
+</div>
+<div class="paragraph">
+<p>Using the following snippets, it&#8217;s possible to label HTTP verbs in the Spring REST Docs in the same colors as in the swagger-ui.</p>
+</div>
+<div class="listingblock">
+<div class="title">Asciidoc variables</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-asciidoc hljs" data-lang="asciidoc">= Attributes with HTTP labels
 // Include contents of docinfo.html in HTML head with CSS style definitions
 :docinfo1:
 
@@ -264,40 +276,52 @@
 
 === {http-get} Request
 === {http-post} Create resource
-=== {http-put} Modify resource
-</code></pre></div></div>
+=== {http-put} Modify resource</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below is the <code>docinfo.html</code> with the CSS style definitions.
+It contains colors for all verbs, corresponding to the default swagger-ui colors.</p>
+</div>
+<div class="listingblock">
+<div class="title">docinfo.html file</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;style&gt;
+.http {
+    color: #fff;
+    background-color: beige;
+    padding: .1em .6em;
+    font-size: .75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: .25em;
+}
 
-<p>Below is the <code class="highlighter-rouge">docinfo.html</code> with the CSS style definitions. It contains colors for all verbs, corresponding to the default swagger-ui colors.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
-<span class="nc">.http</span> <span class="p">{</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-    <span class="nl">background-color</span><span class="p">:</span> <span class="no">beige</span><span class="p">;</span>
-    <span class="nl">padding</span><span class="p">:</span> <span class="m">.1em</span> <span class="m">.6em</span><span class="p">;</span>
-    <span class="nl">font-size</span><span class="p">:</span> <span class="m">.75em</span><span class="p">;</span>
-    <span class="nl">font-weight</span><span class="p">:</span> <span class="m">700</span><span class="p">;</span>
-    <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">.25em</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nc">.http.get</span>  <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#61affe</span><span class="p">;}</span>
-<span class="nc">.http.post</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#49cc90</span><span class="p">;}</span>
-<span class="nc">.http.put</span>  <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#fca130</span><span class="p">;}</span>
-<span class="nc">.http.delete</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#f93e3e</span><span class="p">;}</span>
-<span class="nc">.http.head</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#9012fe</span><span class="p">;}</span>
-<span class="nc">.http.options</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#0d5aa7</span><span class="p">;}</span>
-<span class="nc">.http.patch</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="m">#50e3c2</span><span class="p">;}</span>
-<span class="nt">&lt;/style&gt;</span>
-</code></pre></div></div>
-
+.http.get  {background-color: #61affe;}
+.http.post {background-color: #49cc90;}
+.http.put  {background-color: #fca130;}
+.http.delete {background-color: #f93e3e;}
+.http.head {background-color: #9012fe;}
+.http.options {background-color: #0d5aa7;}
+.http.patch {background-color: #50e3c2;}
+&lt;/style&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>This gives the following result in the Spring REST Docs output.</p>
-
-<p><img src="/assets/img/posts/asciidoc-httplabels.png" alt="Asciidoc with httplabels" /></p>
-
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/img/posts/asciidoc-httplabels.png" alt="Asciidoc with httplabels">
+</div>
+</div>
+<div class="quoteblock">
 <blockquote>
-  <p>Written with Asciidoc 1.5.6</p>
+<div class="paragraph">
+<p>Written with Asciidoc 1.5.6</p>
+</div>
 </blockquote>
-
-
+</div>
     
 
 
@@ -336,6 +360,15 @@
     
       <li>
         <h3>
+          <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+            Reduce the code to noise ratio of maven POMs
+            <small>29 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2018/10/easily-build-your-own-tech-radar/">
             Easily build your own tech radar
             <small>15 Oct 2018</small>
@@ -348,15 +381,6 @@
           <a href="/2018/09/plantuml-swagger/">
             Plantuml labels like swagger-ui
             <small>16 Sep 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2018/09/spock-jupiter/">
-            Combining Spock 1.2 and Junit 5 tests
-            <small>06 Sep 2018</small>
           </a>
         </h3>
       </li>
@@ -392,6 +416,10 @@
         });
     })(document, ClipboardJS);
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css"/>
+
 
   </body>
 </html>

@@ -34,6 +34,7 @@
   <!-- Additional head bits without overriding original head -->
 
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
@@ -226,9 +227,9 @@
   <!-- See https://blog.lanyonm.org/articles/2013/11/21/alphabetize-jekyll-page-tags-pure-liquid.html -->
 <!-- With added pipe to handle lack of sort_natural -->
 
-<!-- site_tags: junit|junit,spock|spock,gradle|gradle,asciidoc|asciidoc,swagger-ui|swagger-ui,plantuml|plantuml,architecture|architecture -->
+<!-- site_tags: junit|junit,spock|spock,gradle|gradle,asciidoc|asciidoc,swagger-ui|swagger-ui,plantuml|plantuml,architecture|architecture,maven|maven,yaml|yaml -->
 
-<!-- tag_words: architecture|architectureasciidoc|asciidocgradle|gradlejunit|junitplantuml|plantumlspock|spockswagger-ui|swagger-ui -->
+<!-- tag_words: architecture|architectureasciidoc|asciidocgradle|gradlejunit|junitmaven|mavenplantuml|plantumlspock|spockswagger-ui|swagger-uiyaml|yaml -->
 
 <div id="tags-page">
   <div class="tags-list">
@@ -258,6 +259,12 @@
     </a>
     
     
+    <a href="#maven" class="tag-link">
+      <span class="tag-name">maven</span>
+      <span class="tag-count">1</span>
+    </a>
+    
+    
     <a href="#plantuml" class="tag-link">
       <span class="tag-name">plantuml</span>
       <span class="tag-count">1</span>
@@ -273,6 +280,12 @@
     <a href="#swagger-ui" class="tag-link">
       <span class="tag-name">swagger-ui</span>
       <span class="tag-count">2</span>
+    </a>
+    
+    
+    <a href="#yaml" class="tag-link">
+      <span class="tag-name">yaml</span>
+      <span class="tag-count">1</span>
     </a>
     
   </div>
@@ -359,6 +372,23 @@
     </div>
     
     
+    <div id="maven" class="posts-for-tag">
+      <h2>maven</h2>
+      <ul class="posts-list">
+        
+          <li>
+            <h3>
+              <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+                Reduce the code to noise ratio of maven POMs
+                <small>29 Oct 2018</small>
+              </a>
+            </h3>
+          </li>
+        
+      </ul>
+    </div>
+    
+    
     <div id="plantuml" class="posts-for-tag">
       <h2>plantuml</h2>
       <ul class="posts-list">
@@ -418,6 +448,23 @@
       </ul>
     </div>
     
+    
+    <div id="yaml" class="posts-for-tag">
+      <h2>yaml</h2>
+      <ul class="posts-list">
+        
+          <li>
+            <h3>
+              <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+                Reduce the code to noise ratio of maven POMs
+                <small>29 Oct 2018</small>
+              </a>
+            </h3>
+          </li>
+        
+      </ul>
+    </div>
+    
   </div>
 </div>
 </div>
@@ -448,6 +495,10 @@
         });
     })(document, ClipboardJS);
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css"/>
+
 
   </body>
 </html>

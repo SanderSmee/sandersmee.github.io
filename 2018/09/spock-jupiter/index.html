@@ -33,7 +33,10 @@
 
   <!-- Additional head bits without overriding original head -->
 
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css" />
+
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
@@ -244,46 +247,62 @@
 
 
   <div class="post-body">
-    <p>Great projects keep moving forward. <a href="https://junit.org/junit5/">JUnit5</a> is available since september 2017 and <a href="http://spockframework.org">Spock</a> 1.2 was completed in september 2018.
+    <div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+2018-10-01: Update for Spock 1.2 release
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Great projects keep moving forward. <a href="https://junit.org/junit5/">JUnit5</a> is available since september 2017 and <a href="http://spockframework.org">Spock</a> 1.2 was completed in september 2018.
 Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.</p>
+</div>
+<div class="paragraph">
+<p>As it turns out, it&#8217;s quite easy to make that happen. JUnit5 comes with a <em>vintage</em> engine to run junit4 based tests. If that is available on the test classpath, your Spock tests run like on junit4.</p>
+</div>
+<div class="paragraph">
+<p>The following example is based on gradle, and is the minimum for getting started in gradle. It declares the dependencies and instructs gradle to use the JUnit5 <code>JUnitPlatform</code> to execute the tests.</p>
+</div>
+<div class="paragraph">
+<p>I have a <a href="http://github.com/sandersmee/spock-jupiter">sample repository</a> that includes a maven <code>pom.xml</code>. The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-groovy hljs" data-lang="groovy">plugins {
+  id 'java'
+  id 'groovy'
+}
 
-<p>As it turns out, it’s quite easy to make that happen. JUnit5 comes with a <em>vintage</em> engine to run junit4 based tests. If that is available on the test classpath, your Spock tests run like on junit4.</p>
+repositories {
+  mavenCentral()
+}
 
-<p>The following example is based on gradle, and is the minimum for getting started in gradle. It declares the dependencies and instructs gradle to use the JUnit5 <code class="highlighter-rouge">JUnitPlatform</code> to execute the tests.</p>
+sourceCompatibility = 1.8
 
-<p>I have a <a href="http://github.com/sandersmee/spock-jupiter">sample repository</a> that includes a maven <code class="highlighter-rouge">pom.xml</code>. The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.</p>
+dependencies {
+  testCompile "org.spockframework:spock-core:1.2-groovy-2.5"
+  implementation "org.junit.jupiter:junit-jupiter-api:5.3.0"
+  testRuntimeOnly "org.junit.vintage:junit-vintage-engine:5.3.0"
+}
 
-<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plugins</span> <span class="o">{</span>
-  <span class="n">id</span> <span class="s1">'java'</span>
-  <span class="n">id</span> <span class="s1">'groovy'</span>
-<span class="o">}</span>
-
-<span class="n">repositories</span> <span class="o">{</span>
-  <span class="n">mavenCentral</span><span class="o">()</span>
-<span class="o">}</span>
-
-<span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="mf">1.8</span>
-
-<span class="n">dependencies</span> <span class="o">{</span>
-  <span class="n">testCompile</span> <span class="s2">"org.spockframework:spock-core:1.2-groovy-2.5"</span>
-  <span class="n">implementation</span> <span class="s2">"org.junit.jupiter:junit-jupiter-api:5.3.0"</span>
-  <span class="n">testRuntimeOnly</span> <span class="s2">"org.junit.vintage:junit-vintage-engine:5.3.0"</span>
-<span class="o">}</span>
-
-<span class="n">test</span> <span class="o">{</span>
-  <span class="n">useJUnitPlatform</span><span class="o">()</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
+test {
+  useJUnitPlatform()
+}</code></pre>
+</div>
+</div>
+<div class="quoteblock">
 <blockquote>
-  <p>Written with Spock 1.2, JUnit 5.3.0, and Gradle 4.10</p>
+<div class="paragraph">
+<p>Written with Spock 1.2, JUnit 5.3.0, and Gradle 4.10</p>
+</div>
 </blockquote>
-
-<blockquote>
-  <p>2018-10-01: Update for Spock 1.2 release</p>
-</blockquote>
-
-
+</div>
     
 
 
@@ -333,6 +352,15 @@ Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 t
     
       <li>
         <h3>
+          <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+            Reduce the code to noise ratio of maven POMs
+            <small>29 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2018/10/easily-build-your-own-tech-radar/">
             Easily build your own tech radar
             <small>15 Oct 2018</small>
@@ -345,15 +373,6 @@ Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 t
           <a href="/2018/09/plantuml-swagger/">
             Plantuml labels like swagger-ui
             <small>16 Sep 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2018/09/asciidoc-swagger/">
-            Asciidoc labels like swagger-ui
-            <small>14 Sep 2018</small>
           </a>
         </h3>
       </li>
@@ -389,6 +408,10 @@ Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 t
         });
     })(document, ClipboardJS);
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css"/>
+
 
   </body>
 </html>

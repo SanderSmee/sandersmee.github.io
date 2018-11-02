@@ -33,7 +33,10 @@
 
   <!-- Additional head bits without overriding original head -->
 
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css" />
+
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
@@ -244,73 +247,103 @@
 
 
   <div class="post-body">
-    <p>The <a href="https://www.thoughtworks.com/radar">Thoughtworks Technology Radar</a> is well known for showing technology trends and choices.
+    <div class="paragraph">
+<p>The <a href="https://www.thoughtworks.com/radar">Thoughtworks Technology Radar</a> is well known for showing technology trends and choices.
 For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option.
 Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.</p>
-
+</div>
+<div class="paragraph">
 <p>To accomplish that I took the following steps:</p>
-
-<ol>
-  <li>Create a folder to put the tech radar into: <code class="highlighter-rouge">${project-folder}</code>.</li>
-  <li>Start with the <a href="https://html5boilerplate.com">HTML5 Boilerplate</a> index.html file, and put it into <code class="highlighter-rouge">${project-folder}</code>.</li>
-  <li>Insert the snippets as documented at <a href="https://github.com/zalando/tech-radar">Zalando Tech Radar</a>, with one adjustment.
-I don’t fill the <code class="highlighter-rouge">entries</code> array with entries, but will do that later on, from the input in the CSV file.</li>
-  <li>Create a CSV file (<code class="highlighter-rouge">${project-folder}/data.csv</code>)as input for the tech radar.
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a folder to put the tech radar into: <code>${project-folder}</code>.</p>
+</li>
+<li>
+<p>Start with the <a href="https://html5boilerplate.com">HTML5 Boilerplate</a> index.html file, and put it into <code>${project-folder}</code>.</p>
+</li>
+<li>
+<p>Insert the snippets as documented at <a href="https://github.com/zalando/tech-radar">Zalando Tech Radar</a>, with one adjustment.
+I don&#8217;t fill the <code>entries</code> array with entries, but will do that later on, from the input in the CSV file.</p>
+</li>
+<li>
+<p>Create a CSV file (<code>${project-folder}/data.csv</code>) as input for the tech radar.
 It has columns for the ring and quadrant where a technology should be put, and an indicator for movement.
 The names of the rings and quadrant should equal those in the configuration copied from the Zalando example.
 If you changed them, use those names instead.
 The movement indicator is (up, none, down) and in the next step translated in to value understood by the radar.
-The CSV will be translated into entries for the radar.
-    <pre><code class="language-csv">name,ring,quadrant,moved,link
+The CSV will be translated into entries for the radar.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csv hljs" data-lang="csv">name,ring,quadrant,moved,link
 Java,INNER,Bottom Right,none,../docs/java.html
-Typescript,SECOND,Top Left,up,../docs/typescript.html
-</code></pre>
-  </li>
-  <li>Add the following D3.js library to parse CSV:
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://d3js.org/d3-dsv.v1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre></div>    </div>
-    <p>This library provides functions to parse CSV file(s) into a map structure per row in the file.</p>
-  </li>
-  <li>Create a function to transform a row in the CSV into an entry for the tech radar:
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">toEntry</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-     <span class="k">return</span> <span class="p">{</span>
-         <span class="na">label</span><span class="p">:</span> <span class="nx">row</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-         <span class="na">quadrant</span><span class="p">:</span> <span class="p">[</span><span class="s1">'Bottom Right'</span><span class="p">,</span> <span class="s1">'Bottom Left'</span><span class="p">,</span> <span class="s1">'Top Left'</span><span class="p">,</span> <span class="s1">'Top Right'</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">quadrant</span><span class="p">),</span>
-         <span class="na">ring</span><span class="p">:</span> <span class="p">[</span><span class="s1">'INNER'</span><span class="p">,</span> <span class="s1">'SECOND'</span><span class="p">,</span> <span class="s1">'THIRD'</span><span class="p">,</span> <span class="s1">'OUTER'</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">ring</span><span class="p">),</span>
-         <span class="na">link</span><span class="p">:</span> <span class="nx">row</span><span class="p">.</span><span class="nx">link</span><span class="p">,</span>
-         <span class="na">moved</span><span class="p">:</span> <span class="p">[</span><span class="s1">'down'</span><span class="p">,</span> <span class="s1">'none'</span><span class="p">,</span> <span class="s1">'up'</span><span class="p">].</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">row</span><span class="p">.</span><span class="nx">moved</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="na">active</span><span class="p">:</span> <span class="kc">true</span>
-     <span class="p">}</span>
- <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>This is the diversion from the steps in the Zalando tech radar description.
-Wrap the <code class="highlighter-rouge">radar_visualization()</code> function a custom one, that takes an array of entry, to render the transformed rows, e.g. <code class="highlighter-rouge">draw_radar(entries)</code>.
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">function</span> <span class="nx">draw_radar</span><span class="p">(</span><span class="nx">my_entries</span><span class="p">)</span> <span class="p">{</span>
-     <span class="nx">radar_visualization</span><span class="p">({</span>
-         <span class="p">...</span>
-         <span class="na">entries</span><span class="p">:</span> <span class="nx">my_entries</span>
-     <span class="p">});</span>
- <span class="p">}</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Finally glue everything together to fetch the CSV, parse and transform it, and draw the entries.
-The code below uses the functions I defined in the previous steps
-    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">fetch</span><span class="p">(</span><span class="s1">'./data.csv'</span><span class="p">)</span>
-     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resp</span><span class="p">)</span> <span class="p">{</span>
-         <span class="k">return</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
-     <span class="p">})</span>
-     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">csv</span><span class="p">)</span> <span class="p">{</span>
-         <span class="kd">var</span> <span class="nx">entries</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">csvParse</span><span class="p">(</span><span class="nx">csv</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
-             <span class="k">return</span> <span class="nx">toEntry</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
-         <span class="p">});</span>
-         <span class="nx">draw_radar</span><span class="p">(</span><span class="nx">entries</span><span class="p">);</span>
-     <span class="p">});</span>
-</code></pre></div>    </div>
-  </li>
+Typescript,SECOND,Top Left,up,../docs/typescript.html</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the following D3.js library to parse CSV:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;script src="https://d3js.org/d3-dsv.v1.min.js"&gt;&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This library provides functions to parse CSV file(s) into a map structure per row in the file.</p>
+</div>
+</li>
+<li>
+<p>Create a function to transform a row in the CSV into an entry for the tech radar:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function toEntry(row) {
+    return {
+        label: row.name,
+        quadrant: ['Bottom Right', 'Bottom Left', 'Top Left', 'Top Right'].indexOf(row.quadrant),
+        ring: ['INNER', 'SECOND', 'THIRD', 'OUTER'].indexOf(row.ring),
+        link: row.link,
+        moved: ['down', 'none', 'up'].indexOf(row.moved) - 1,
+        active: true
+    }
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>This is the diversion from the steps in the Zalando tech radar description.
+Wrap the <code>radar_visualization()</code> function a custom one, that takes an array of entry, to render the transformed rows, e.g. <code>draw_radar(entries)</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function draw_radar(my_entries) {
+    radar_visualization({
+        ...
+        entries: my_entries
+    });
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Finally glue everything together to fetch the CSV, parse and transform it, and draw the entries.
+The code below uses the functions I defined in the previous steps</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">fetch('./data.csv')
+    .then(function (resp) {
+        return resp.text();
+    })
+    .then(function (csv) {
+        var entries = d3.csvParse(csv, function (row) {
+            return toEntry(row);
+        });
+        draw_radar(entries);
+    });</code></pre>
+</div>
+</div>
+</li>
 </ol>
-
-
+</div>
     
 
 
@@ -338,6 +371,15 @@ The code below uses the functions I defined in the previous steps
     
       <li>
         <h3>
+          <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+            Reduce the code to noise ratio of maven POMs
+            <small>29 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2018/09/plantuml-swagger/">
             Plantuml labels like swagger-ui
             <small>16 Sep 2018</small>
@@ -350,15 +392,6 @@ The code below uses the functions I defined in the previous steps
           <a href="/2018/09/asciidoc-swagger/">
             Asciidoc labels like swagger-ui
             <small>14 Sep 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2018/09/spock-jupiter/">
-            Combining Spock 1.2 and Junit 5 tests
-            <small>06 Sep 2018</small>
           </a>
         </h3>
       </li>
@@ -394,6 +427,10 @@ The code below uses the functions I defined in the previous steps
         });
     })(document, ClipboardJS);
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css"/>
+
 
   </body>
 </html>

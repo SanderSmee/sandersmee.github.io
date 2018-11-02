@@ -421,3 +421,6 @@ button.disqus-load { margin-top: 1em; }
 .form--search .posts-list { padding-top: 2em; }
 
 .is-pulled-right { float: right; }
+
+.listingblock .content { padding: 0; }
+.listingblock .title { font-style: italic; }

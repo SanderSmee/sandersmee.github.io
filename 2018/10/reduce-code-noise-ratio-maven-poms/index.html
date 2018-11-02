@@ -11,7 +11,7 @@
 
   <title>
     
-      Programming &middot; Sander
+      Reduce the code to noise ratio of maven POMs &middot; Sander
     
   </title>
 
@@ -33,13 +33,15 @@
 
   <!-- Additional head bits without overriding original head -->
 
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css" />
+
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
 
-  <body class="category">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -130,7 +132,7 @@
 
   
     
-      <a class="category-link  active"
+      <a class="category-link "
           href="/category/programming/">Programming</a>
     
   
@@ -221,33 +223,166 @@
 
     <main class="container">
       <header>
-  <h1 class="page-title">Programming</h1>
+  <h1 class="post-title">Reduce the code to noise ratio of maven POMs</h1>
 </header>
 <div class="content">
-  
+  <div class="post-meta">
+    <span class="post-date">29 Oct 2018 </span>
+    <span class="post-categories">
+      
+        &bull;
 
-<ul class="posts-list">
+        
+        
+        
+
+        
+          <a href="/category/programming/">
+            Programming
+          </a>
+        
+      
+    </span>
+  </div>
+
+
+  <div class="post-body">
+    <div class="paragraph">
+<p>I really like maven for the structured way it provides for defining and building a project.
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.</p>
+</div>
+<div class="paragraph">
+<p>Looking for a less verbose way to declare a maven POM, I discovered <a href="https://github.com/takari/polyglot-maven">polyglot maven</a>.
+It are maven extensions that allow the maven POM to eb written in another dialect than XML.
+Since you see YAML more and more I decided to try that dialect, and see if my maven descriptor would be clearer.</p>
+</div>
+<div class="paragraph">
+<p>The minimum version of maven this works on, is maven 3.3.1. Since that version it&#8217;s possible to provide per project configuration. or extension of maven.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a directory to work in, <code>{projectdir}</code>, and change into it.</p>
+</li>
+<li>
+<p>To register the extensions for maven, create a file <code>{projectdir}/.mvn/extensions.xml</code> and add the extension:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;extensions&gt;
+    &lt;extension&gt;
+        &lt;groupId&gt;io.takari.polyglot&lt;/groupId&gt;
+        &lt;artifactId&gt;polyglot-yaml&lt;/artifactId&gt;
+        &lt;version&gt;0.3.1&lt;/version&gt;
+    &lt;/extension&gt;
+&lt;/extensions&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now it&#8217;s possile to write the maven POM in YAML, <code>pom.yml</code>:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">modelVersion: 4.0.0
+groupId: demo.maven.polyglot
+artifactId: yml-demo
+version: 1.0-SNAPSHOT
+name: 'YAML Demo'
+
+dependencies:
+- { groupId: org.junit.jupiter, artifactId: junit-jupiter, version: 5.3.1, scope: test }
+plugins:
+- artifactId: maven-compiler-plugin
+    version: 3.8.0
+    configuration:
+    source: 1.8
+    target: 1.8
+- artifactId: maven-surefire-plugin
+    version: 2.22.1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By using the yaml inline map. or dictionary notation declaring a dependency uses way less characters then when using XML.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect1">
+<h2 id="limitations">Limitations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Although this looks great, there are some limitations to using maven polyglot.
+Mixing different dialects is not possible, and plugins depending on the XML format will not work with another dialect.
+I also could not get a multi module project working with polyglot yaml.</p>
+</div>
+</div>
+</div>
+    
+
+
+
+<div class="post-tags">
   
+    
+    <a href="/tags/#maven">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">maven</span>
+    </a>
   
-    <li>
-      <h3>
-        <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
-          Reduce the code to noise ratio of maven POMs
-          <small>29 Oct 2018</small>
-        </a>
-      </h3>
-    </li>
+    
+    <a href="/tags/#yaml">
+    
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">yaml</span>
+    </a>
   
-    <li>
-      <h3>
-        <a href="/2018/09/spock-jupiter/">
-          Combining Spock 1.2 and Junit 5 tests
-          <small>06 Sep 2018</small>
-        </a>
-      </h3>
-    </li>
+</div>
+  </div>
+
   
-</ul>
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2018/10/easily-build-your-own-tech-radar/">
+            Easily build your own tech radar
+            <small>15 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/09/plantuml-swagger/">
+            Plantuml labels like swagger-ui
+            <small>16 Sep 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2018/09/asciidoc-swagger/">
+            Asciidoc labels like swagger-ui
+            <small>14 Sep 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
 
 </div>
 

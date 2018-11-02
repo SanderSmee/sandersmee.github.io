@@ -33,7 +33,10 @@
 
   <!-- Additional head bits without overriding original head -->
 
+  <link rel="stylesheet" href="/assets/css/asciidoctor.css" />
+
 <script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 
 </head>
 
@@ -244,12 +247,19 @@
 
 
   <div class="post-body">
-    <p>It’s great to have <a href="/2018/09/asciidoc-swagger/">Asciidoc labels like swagger-ui</a> in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use <a href="http://plantuml.com/">Plantuml</a> diagrams, e.g. to illustrate the sequence of interaction between microservices.
+    <div class="paragraph">
+<p>It&#8217;s great to have <a href="/2018/09/asciidoc-swagger/">Asciidoc labels like swagger-ui</a> in the documentation, but would it be possible to extend this even further?
+In asciidoc documentation I also use <a href="http://plantuml.com/">Plantuml</a> diagrams, e.g. to illustrate the sequence of interaction between microservices.
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?</p>
-
-<p>In Plantuml it’s possible to declare macros. I created a reusable macro for a message in a sequence diagram, that has a note next to it. By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@startuml
+</div>
+<div class="paragraph">
+<p>In Plantuml it&#8217;s possible to declare macros.
+I created a reusable macro for a message in a sequence diagram, that has a note next to it.
+By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">@startuml
 !definelong Request(verb, msg, desc)
 msg : desc
 rnote &lt;&lt;verb&gt;&gt;&lt;&lt;HTTP&gt;&gt; left color
@@ -271,12 +281,17 @@ note right
   this message
 end note
 User &lt;-- Browser : display resource
-@enduml
-</code></pre></div></div>
-
-<p>To give the note a style resembling a label I used the following styling. First some generic styling for each label, based on the <code class="highlighter-rouge">&lt;&lt;HTTP&gt;&gt;</code> stereotype. Specific styling for a verb goes through its own <code class="highlighter-rouge">&lt;&lt;verb&gt;&gt;</code> stereotype.</p>
-
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>skinparam note&lt;&lt;HTTP&gt;&gt; {
+@enduml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To give the note a style resembling a label I used the following styling.
+First some generic styling for each label, based on the <code><a href="#HTTP">[HTTP]</a></code> stereotype.
+Specific styling for a verb goes through its own <code><a href="#verb">[verb]</a></code> stereotype.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">skinparam note&lt;&lt;HTTP&gt;&gt; {
   textAlignment center
   backgroundColor #darkgrey
   borderColor transparent
@@ -290,18 +305,24 @@ skinparam noteBackgroundColor&lt;&lt;PUT&gt;&gt; #fca130
 skinparam noteBackgroundColor&lt;&lt;DELETE&gt;&gt; #f93e3e
 skinparam noteBackgroundColor&lt;&lt;HEAD&gt;&gt; #9012fe
 skinparam noteBackgroundColor&lt;&lt;OPTIONS&gt;&gt; #0d5aa7
-skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2
-</code></pre></div></div>
-
+skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2</code></pre>
+</div>
+</div>
+<div class="paragraph">
 <p>The following results in this diagram:</p>
-
-<p><img src="/assets/img/posts/plantuml-httplabels.png" alt="Plantuml with httplabels" /></p>
-
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/assets/img/posts/plantuml-httplabels.png" alt="Plantuml with httplabels">
+</div>
+</div>
+<div class="quoteblock">
 <blockquote>
-  <p>Written with Plantuml 1.2018.10</p>
+<div class="paragraph">
+<p>Written with Plantuml 1.2018.10</p>
+</div>
 </blockquote>
-
-
+</div>
     
 
 
@@ -351,6 +372,15 @@ skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2
     
       <li>
         <h3>
+          <a href="/2018/10/reduce-code-noise-ratio-maven-poms/">
+            Reduce the code to noise ratio of maven POMs
+            <small>29 Oct 2018</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2018/10/easily-build-your-own-tech-radar/">
             Easily build your own tech radar
             <small>15 Oct 2018</small>
@@ -363,15 +393,6 @@ skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2
           <a href="/2018/09/asciidoc-swagger/">
             Asciidoc labels like swagger-ui
             <small>14 Sep 2018</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2018/09/spock-jupiter/">
-            Combining Spock 1.2 and Junit 5 tests
-            <small>06 Sep 2018</small>
           </a>
         </h3>
       </li>
@@ -407,6 +428,10 @@ skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2
         });
     })(document, ClipboardJS);
 </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/a11y-dark.min.css"/>
+
 
   </body>
 </html>
