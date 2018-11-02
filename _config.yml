@@ -8,13 +8,18 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://sandersmee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
+excerpt_separator: <!--more-->
 markdown: kramdown
+highlighter: none
 remote_theme: fongandrew/hydeout
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
 
 asciidoctor:
-  backend: html5s
+  backend: html5
   attributes:
-    source-highlighter: rouge
+    source-highlighter: highlightjs
     icons: font
 
 google_analytics: UA-8287349-4
@@ -31,8 +36,6 @@ plugins:
   - jekyll-gist
   - jekyll-paginate
   - jekyll-asciidoc
-  - asciidoctor-rouge
-  - asciidoctor-html5s
 
 include: ['_pages']
 exclude:
