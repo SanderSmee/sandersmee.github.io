@@ -1,6 +1,6 @@
 ---
-layout: post
 title:  "Loading DBUnit data in a Spring TestExecutionListener"
+date: 2015-01-01
 category: programming
 tags: [spring, dbunit]
 ---

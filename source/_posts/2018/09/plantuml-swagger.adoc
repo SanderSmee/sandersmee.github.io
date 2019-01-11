@@ -1,6 +1,6 @@
 ---
-layout: post
 title:  "Plantuml labels like swagger-ui"
+date: 2018-09-16
 categories: documentation
 tags: [plantuml, asciidoc, swagger-ui]
 ---

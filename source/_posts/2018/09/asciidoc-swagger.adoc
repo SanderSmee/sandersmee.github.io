@@ -1,8 +1,11 @@
 ---
-layout: post
 title:  "Asciidoc labels like swagger-ui"
-categories: documentation
-tags: [asciidoc, swagger-ui]
+date: 2018-09-14 20:00:00
+categories:
+    - documentation
+tags:
+    - asciidoc
+    - swagger-ui
 ---
 :page-liquid:
 :1: http://springfox.github.io/springfox/

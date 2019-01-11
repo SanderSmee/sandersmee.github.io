@@ -5,14 +5,14 @@ menu:
   Tags: /tags
   Categories: /categories
   Github:
-    url: https://github.com/klugjo/hexo-theme-clean-blog
+    url: https://github.com/SanderSmee/sandersmee.github.io
     icon: github
 
 # Title on top left of menu. Leave empty to use main blog title
-menu_title: Configurable Title
+menu_title: Groovy Programmer
 
 # URL of the Home page image
-index_cover: http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg
+index_cover: https://source.unsplash.com/dC6Pb2JdAqs
 
 # Default post title
 default_post_title: Untitled
@@ -28,7 +28,7 @@ comments:
     comment_colorscheme: light
 
 # Google Analytics Tracking ID
-google_analytics:
+google_analytics: UA-8287349-4
 
 # Addthis ID
 addthis:
