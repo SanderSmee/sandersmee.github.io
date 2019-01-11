@@ -1,17 +1,35 @@
-language: ruby
-rvm:
-- 2.5.1
-cache: bundler
-sudo: false
-install:
-- bundle install
+language: node_js
 
-script: bundle exec rake deploy
+node_js:
+- '6.3.1'
 
-# safelist
+cache:
+  directories:
+  - node_modules
+
 branches:
   only:
   - source
+
+before_install:
+- npm install hexo-cli -g
+- npm install hexo --save
+- npm install
+
+before_script:
+- git config --global user.name 'Travis CI'
+- git config --global user.email 'bot@travis-ci.org'
+- sed -i'' "s~git@github.com:sandersmee/sandersmee.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/sandesmee/sandersmee.github.io.git~" _config.yml
+
+script:
+- hexo generate
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: sh deploy.sh
+  on:
+    branch: source
 
 env:
   global:
