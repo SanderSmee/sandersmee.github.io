@@ -34,7 +34,7 @@ The minimum version of maven this works on, is maven 3.3.1. Since that version i
 </extensions>
 ----
 
-. Now it's possile to write the maven POM in YAML, `pom.yml`:
+. Now it's possible to write the maven POM in YAML, `pom.yml`:
 +
 [source,yaml]
 ----
