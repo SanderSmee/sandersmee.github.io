@@ -1,11 +1,9 @@
 # Header
 menu:
-  # Home: /
   Archive: /archives
   # Tags: /tags
   # Categories: /categories
   Github: https://github.com/SanderSmee/sandersmee.github.io
-    # icon: github
 
 # Title on top left of menu. Leave empty to use main blog title
 menu_title: thoughts.toString();
