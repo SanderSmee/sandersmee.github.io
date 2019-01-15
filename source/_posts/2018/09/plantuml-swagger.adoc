@@ -74,6 +74,7 @@ skinparam noteBackgroundColor<<PATCH>> #50e3c2
 
 The following results in this diagram:
 
+.diagram with labels for HTTP verbs like swagger
 image::{img}[Plantuml with httplabels]
 
 > Written with Plantuml 1.2018.10

@@ -27,6 +27,7 @@ The following example is based on gradle, and is the minimum for getting started
 I have a {repo}[sample repository] that includes a maven `pom.xml`. The repository also includes a JUnit5 test, to prove that a combination of JUnit5 and Spock tests can exist in the same project.
 
 [source,groovy]
+.build.gradle
 ----
 plugins {
   id 'java'
