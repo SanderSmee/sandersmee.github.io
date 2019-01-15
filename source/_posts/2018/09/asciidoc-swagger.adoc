@@ -7,17 +7,18 @@ tags:
     - asciidoc
     - swagger-ui
 ---
-:page-liquid:
 :1: http://springfox.github.io/springfox/
 :2: https://spring.io/projects/spring-restdocs
 :3: http://mrhaki.blogspot.com/2018/09/awesome-asciidoctor-document-attributes.html
-:img: {{ site.baseurl }}{% link assets/img/posts/asciidoc-httplabels.png %}
+:img: /images/asciidoc-httplabels.png
 
 If you're building a rest api with spring-boot and want to document the api, you have two good options to do this; {1}[Springfox], or {2}[Spring REST Docs].
 Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc.
 And what's best is that you can simply combine the two in a project.
 
-//<!--more-->
+++++
+<!-- more -->
+++++
 
 I wanted to create some connection or similarity between the swagger-ui and asciidoc documentation.
 I came across a {3}[blogpost by mrhaki] that inspired me to extend the snippets in his example.

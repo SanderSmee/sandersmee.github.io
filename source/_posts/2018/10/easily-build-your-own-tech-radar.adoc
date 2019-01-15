@@ -15,7 +15,10 @@ The {radar}[Thoughtworks Technology Radar] is well known for showing technology 
 For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option.
 Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.
 
-//<!--more-->
+++++
+<!-- more -->
+++++
+
 To accomplish that I took the following steps:
 
 . Create a folder to put the tech radar into: `${project-folder}`.

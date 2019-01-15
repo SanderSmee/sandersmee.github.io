@@ -1,9 +1,8 @@
 ---
 layout: page
-title: 404 Page Not Found
+title: '404.toString()'
 ---
 
-= 404 Not Found
+== "Not Found".equals(404.toString())
 
 Requested page cannot be found
-

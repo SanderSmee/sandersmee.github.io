@@ -4,21 +4,24 @@ date: 2018-09-16
 categories: documentation
 tags: [plantuml, asciidoc, swagger-ui]
 ---
-:page-liquid:
 :1: http://plantuml.com/
 :2: ../asciidoc-swagger
-:img: {{ site.baseurl }}{% link assets/img/posts/plantuml-httplabels.png %}
+:img: /images/plantuml-httplabels.png
 
 It's great to have link:{2}[Asciidoc labels like swagger-ui] in the documentation, but would it be possible to extend this even further?
 In asciidoc documentation I also use link:{1}[Plantuml] diagrams, e.g. to illustrate the sequence of interaction between microservices.
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?
 
-//<!--more-->
+++++
+<!-- more -->
+++++
+
 In Plantuml it's possible to declare macros.
 I created a reusable macro for a message in a sequence diagram, that has a note next to it.
 By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.
 
 [source,plantuml]
+.plantuml diagram
 ----
 @startuml
 !definelong Request(verb, msg, desc)
@@ -50,6 +53,7 @@ First some generic styling for each label, based on the `<<HTTP>>` stereotype.
 Specific styling for a verb goes through its own `<<verb>>` stereotype.
 
 [source,plantuml]
+.plantuml styling
 ----
 skinparam note<<HTTP>> {
   textAlignment center
