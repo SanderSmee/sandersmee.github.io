@@ -13,7 +13,7 @@ timezone: Europe/Amsterdam
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://sandersmee.github.io
+url: http://thoughts.tostring.blog
 root: /
 permalink: :year/:month/:title/
 permalink_defaults:
