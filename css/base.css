@@ -226,6 +226,9 @@ hr.small {
 .intro-header .post-heading .meta a {
   color: #fff;
 }
+.intro-header .post-heading .meta .meta__item {
+  margin-right: 1em;
+}
 @media only screen and (min-width: 768px) {
   .intro-header .post-heading h1 {
     font-size: 55px;
@@ -260,6 +263,9 @@ hr.small {
   font-size: 18px;
   font-style: italic;
   margin-top: 0;
+}
+.post-preview > .post-meta .meta__item {
+  margin-right: 1em;
 }
 .post-preview > .post-meta.archive {
   font-size: 16px;

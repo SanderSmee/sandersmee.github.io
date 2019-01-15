@@ -14,7 +14,8 @@
 
     
         <meta name="description" content="It&amp;#8217;s great to have Asciidoc labels like swagger-ui in the documentation, but would it be possible to extend this even further?
-In asciidoc docum">
+In asciidoc documentation I also use Plantuml diagrams, e.g. to illustrate the sequence of interaction between microservices.
+Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?">
     
 
     <!--Author-->
@@ -30,7 +31,8 @@ In asciidoc docum">
     <!--Open Graph Description-->
     
         <meta property="og:description" content="It&amp;#8217;s great to have Asciidoc labels like swagger-ui in the documentation, but would it be possible to extend this even further?
-In asciidoc docum">
+In asciidoc documentation I also use Plantuml diagrams, e.g. to illustrate the sequence of interaction between microservices.
+Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?">
     
 
     <!--Open Graph Site Name-->
@@ -59,7 +61,7 @@ In asciidoc docum">
 
     <!-- Title -->
     
-    <title>Plantuml labels like swagger-ui - &lt;i class=&#34;fas fa-brain&#34;&gt;&lt;/i&gt;.toString();</title>
+    <title>Plantuml labels like swagger-ui - thoughts.toString();</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
@@ -165,10 +167,15 @@ In asciidoc docum">
                     
                     <span class="meta">
                         <!-- Date and Author -->
+                        <span class="meta__item">
                         
                         
                             2018-09-15
                         
+                        </span>
+                        <span class="meta__item">
+                        2 minutes read
+                        </span>
                     </span>
                 </div>
             </div>
@@ -209,16 +216,18 @@ In asciidoc docum">
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="paragraph">
-<p>It&#8217;s great to have <a href="&lt;!--￼2-&#8594;&lt;!--￼0-&#8594;">Asciidoc labels like swagger-ui</a> in the documentation, but would it be possible to extend this even further?
+<p>It&#8217;s great to have <a href="../asciidoc-swagger">Asciidoc labels like swagger-ui</a> in the documentation, but would it be possible to extend this even further?
 In asciidoc documentation I also use <a href="http://plantuml.com/" target="_blank" rel="noopener">Plantuml</a> diagrams, e.g. to illustrate the sequence of interaction between microservices.
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?</p>
 </div>
+<a id="more"></a>
 <div class="paragraph">
 <p>In Plantuml it&#8217;s possible to declare macros.
 I created a reusable macro for a message in a sequence diagram, that has a note next to it.
 By giving the note a stereotype it can have custom styling in the diagram, and can look like a label.</p>
 </div>
 <div class="listingblock">
+<div class="title">Listing 1. plantuml diagram</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">@startuml
 !definelong Request(verb, msg, desc)
@@ -251,6 +260,7 @@ First some generic styling for each label, based on the <code><a href="#HTTP">[H
 Specific styling for a verb goes through its own <code><a href="#verb">[verb]</a></code> stereotype.</p>
 </div>
 <div class="listingblock">
+<div class="title">Listing 2. plantuml styling</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plantuml hljs" data-lang="plantuml">skinparam note&lt;&lt;HTTP&gt;&gt; {
   textAlignment center
@@ -274,7 +284,7 @@ skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2</code></pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="<a>assets/img/posts/plantuml-httplabels.png</a>" alt="Plantuml with httplabels">
+<img src="/images/plantuml-httplabels.png" alt="Plantuml with httplabels">
 </div>
 </div>
 <div class="quoteblock">
@@ -299,6 +309,7 @@ skinparam noteBackgroundColor&lt;&lt;PATCH&gt;&gt; #50e3c2</code></pre>
         </div>
     </div>
 </article>
+
 
     <!-- Footer -->
     <hr>

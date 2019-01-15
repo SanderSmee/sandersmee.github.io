@@ -14,7 +14,8 @@
 
     
         <meta name="description" content="I really like maven for the structured way it provides for defining and building a project.
-But sometimes I wish for a less verbose notation than the ">
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.">
     
 
     <!--Author-->
@@ -30,7 +31,8 @@ But sometimes I wish for a less verbose notation than the ">
     <!--Open Graph Description-->
     
         <meta property="og:description" content="I really like maven for the structured way it provides for defining and building a project.
-But sometimes I wish for a less verbose notation than the ">
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.">
     
 
     <!--Open Graph Site Name-->
@@ -59,7 +61,7 @@ But sometimes I wish for a less verbose notation than the ">
 
     <!-- Title -->
     
-    <title>Reduce the code to noise ratio of maven POMs - &lt;i class=&#34;fas fa-brain&#34;&gt;&lt;/i&gt;.toString();</title>
+    <title>Reduce the code to noise ratio of maven POMs - thoughts.toString();</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
@@ -165,10 +167,15 @@ But sometimes I wish for a less verbose notation than the ">
                     
                     <span class="meta">
                         <!-- Date and Author -->
+                        <span class="meta__item">
                         
                         
                             2018-10-28
                         
+                        </span>
+                        <span class="meta__item">
+                        2 minutes read
+                        </span>
                     </span>
                 </div>
             </div>
@@ -213,6 +220,7 @@ But sometimes I wish for a less verbose notation than the ">
 But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
 For example, gradles dependency notation is far shorter than mavens dependency declaration.</p>
 </div>
+<a id="more"></a>
 <div class="paragraph">
 <p>Looking for a less verbose way to declare a maven POM, I discovered <a href="https://github.com/takari/polyglot-maven" target="_blank" rel="noopener">polyglot maven</a>.
 It are maven extensions that allow the maven POM to eb written in another dialect than XML.
@@ -229,6 +237,7 @@ Since you see YAML more and more I decided to try that dialect, and see if my ma
 <li>
 <p>To register the extensions for maven, create a file <code>{projectdir}/.mvn/extensions.xml</code> and add the extension:</p>
 <div class="listingblock">
+<div class="title">Listing 1. extensions.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;extensions&gt;
@@ -244,6 +253,7 @@ Since you see YAML more and more I decided to try that dialect, and see if my ma
 <li>
 <p>Now it&#8217;s possible to write the maven POM in YAML, <code>pom.yml</code>:</p>
 <div class="listingblock">
+<div class="title">Listing 2. pom.yml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">modelVersion: 4.0.0
 groupId: demo.maven.polyglot
@@ -264,7 +274,7 @@ plugins:
 </div>
 </div>
 <div class="paragraph">
-<p>By using the yaml inline map. or dictionary notation declaring a dependency uses way less characters then when using XML.</p>
+<p>By using the yaml inline map, or dictionary notation declaring a dependency uses way less characters then when using XML.</p>
 </div>
 </li>
 </ol>
@@ -294,6 +304,7 @@ I also could not get a multi module project working with polyglot yaml.</p>
         </div>
     </div>
 </article>
+
 
     <!-- Footer -->
     <hr>
