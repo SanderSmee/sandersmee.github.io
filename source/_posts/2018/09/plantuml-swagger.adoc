@@ -6,7 +6,7 @@ tags: [plantuml, asciidoc, swagger-ui]
 ---
 :page-liquid:
 :1: http://plantuml.com/
-:2: {{ site.baseurl }}{% post_url 2018-09-14-asciidoc-swagger %}
+:2: ../asciidoc-swagger
 :img: {{ site.baseurl }}{% link assets/img/posts/plantuml-httplabels.png %}
 
 It's great to have link:{2}[Asciidoc labels like swagger-ui] in the documentation, but would it be possible to extend this even further?

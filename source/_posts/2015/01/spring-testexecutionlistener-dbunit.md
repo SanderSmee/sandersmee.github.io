@@ -3,6 +3,7 @@ title:  "Loading DBUnit data in a Spring TestExecutionListener"
 date: 2015-01-01
 category: programming
 tags: [spring, dbunit]
+published: false
 ---
 You can use Spring `TestExecutionListener` to load DBUnit data per test class.
 

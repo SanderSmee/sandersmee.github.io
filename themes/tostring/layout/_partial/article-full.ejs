@@ -16,12 +16,17 @@
                     <% } %>
                     <span class="meta">
                         <!-- Date and Author -->
+                        <span class="meta__item">
                         <% if(item.author) { %>
                             Posted by <%- item.author %> on
                         <% } %>
                         <% if(item.date) { %>
                             <%= item.date.format(config.date_format) %>
                         <% } %>
+                        </span>
+                        <span class="meta__item">
+                        <%- readingTime(page.content) %>
+                        </span>
                     </span>
                 </div>
             </div>
