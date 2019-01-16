@@ -25,8 +25,8 @@ I came across a {3}[blogpost by mrhaki] that inspired me to extend the snippets 
 
 Using the following snippets, it's possible to label HTTP verbs in the Spring REST Docs in the same colors as in the swagger-ui.
 
-[source,asciidoc]
 .Asciidoc variables
+[source,asciidoc]
 ----
 = Attributes with HTTP labels
 // Include contents of docinfo.html in HTML head with CSS style definitions
@@ -48,8 +48,8 @@ Using the following snippets, it's possible to label HTTP verbs in the Spring RE
 Below is the `docinfo.html` with the CSS style definitions.
 It contains colors for all verbs, corresponding to the default swagger-ui colors.
 
-[source,html]
 .docinfo.html file
+[source,html]
 ----
 <style>
 .http {
