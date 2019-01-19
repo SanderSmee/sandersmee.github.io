@@ -89,6 +89,11 @@ theme: tostring
 marked:
   breaks: false
 
+sitemap:
+  path: sitemap.xml
+  tag: false
+  category: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
