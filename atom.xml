@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2019-01-22T19:26:25.378Z</updated>
+  <updated>2019-01-22T20:31:50.306Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -21,15 +21,11 @@
     <link href="http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/"/>
     <id>http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2019-01-22T19:26:25.378Z</updated>
+    <updated>2019-01-22T20:31:50.306Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;I really like maven for the structured way it provides for defining and building a project.
-But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
-For example, gradles dependency notation is far shorter than mavens dependency declaration.&lt;/p&gt;
-&lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;I really like maven for the structured way it provides for defining and building a project. But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM). For example, gradles dependency notation is far shorter than mavens dependency declaration.&lt;/p&gt;&lt;/div&gt;
     
     </summary>
     
@@ -47,15 +43,11 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     <link href="http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/"/>
     <id>http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2019-01-22T19:26:25.378Z</updated>
+    <updated>2019-01-22T20:31:50.306Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices.
-For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option.
-Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;
-&lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices. For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option. Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;&lt;/div&gt;
     
     </summary>
     
@@ -71,15 +63,11 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     <link href="http://thoughts.tostring.blog/2018/09/plantuml-swagger/"/>
     <id>http://thoughts.tostring.blog/2018/09/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2019-01-22T19:26:25.378Z</updated>
+    <updated>2019-01-22T20:31:50.306Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;It&amp;#8217;s great to have &lt;a href=&quot;../asciidoc-swagger&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further?
-In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices.
-Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;
-&lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;It&amp;#8217;s great to have &lt;a href=&quot;../asciidoc-swagger&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices. Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;&lt;/div&gt;
     
     </summary>
     
@@ -99,15 +87,11 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     <link href="http://thoughts.tostring.blog/2018/09/asciidoc-swagger/"/>
     <id>http://thoughts.tostring.blog/2018/09/asciidoc-swagger/</id>
     <published>2018-09-13T22:00:00.000Z</published>
-    <updated>2019-01-22T19:26:25.378Z</updated>
+    <updated>2019-01-22T20:31:50.306Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;If you&amp;#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring REST Docs&lt;/a&gt;.
-Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc.
-And what&amp;#8217;s best is that you can simply combine the two in a project.&lt;/p&gt;
-&lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;If you&amp;#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring REST Docs&lt;/a&gt;. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what&amp;#8217;s best is that you can simply combine the two in a project.&lt;/p&gt;&lt;/div&gt;
     
     </summary>
     
@@ -129,10 +113,7 @@ And what&amp;#8217;s best is that you can simply combine the two in a project.&l
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;
-&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018.
-Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
-&lt;/div&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018. Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;&lt;/div&gt;
     
     </summary>
     
