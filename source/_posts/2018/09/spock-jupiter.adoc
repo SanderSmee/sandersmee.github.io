@@ -1,17 +1,20 @@
 ---
-layout: post
-title:  "Combining Spock 1.2 and Junit 5 tests"
-categories: programming
-tags: [junit, spock, gradle]
+title: "Combining Spock 1.2 and Junit 5 tests"
+categories:
+  - Programming
+tags:
+  - junit
+  - spock
+  - gradle
 date: 2018-09-06
-last_modified_at: 2018-10-01
+updated: 2018-10-01
+update_notes:
+  - "2018-10-01: Update for Spock 1.2 release"
 ---
 
 :1: https://junit.org/junit5/
 :2: http://spockframework.org
 :repo: http://github.com/sandersmee/spock-jupiter
-
-NOTE: 2018-10-01: Update for Spock 1.2 release
 
 Great projects keep moving forward. {1}[JUnit5] is available since september 2017 and {2}[Spock] 1.2 was completed in september 2018.
 Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.

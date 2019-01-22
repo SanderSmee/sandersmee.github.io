@@ -1,8 +1,12 @@
 ---
-title:  "Plantuml labels like swagger-ui"
+title: "Plantuml labels like swagger-ui"
+categories:
+  - Documentation
+tags:
+  - plantuml
+  - asciidoc
+  - swagger-ui
 date: 2018-09-16
-categories: documentation
-tags: [plantuml, asciidoc, swagger-ui]
 ---
 :1: http://plantuml.com/
 :2: ../asciidoc-swagger

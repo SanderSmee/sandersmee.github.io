@@ -1,8 +1,10 @@
 ---
-layout: post
-title:  "Reduce the code to noise ratio of maven POMs"
-category: programming
-tags: [maven, yaml]
+title: "Reduce the code to noise ratio of maven POMs"
+categories:
+  - Programming
+tags:
+  - maven
+  - yaml
 date: 2018-10-29
 ---
 :polyglot: https://github.com/takari/polyglot-maven
@@ -16,7 +18,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
 ++++
 
 Looking for a less verbose way to declare a maven POM, I discovered {polyglot}[polyglot maven].
-It are maven extensions that allow the maven POM to eb written in another dialect than XML.
+It are maven extensions that allow the maven POM to be written in another dialect than XML.
 Since you see YAML more and more I decided to try that dialect, and see if my maven descriptor would be clearer.
 
 The minimum version of maven this works on, is maven 3.3.1. Since that version it's possible to provide per project configuration. or extension of maven.

@@ -1,8 +1,9 @@
 ---
-layout: post
-title:  "Easily build your own tech radar"
-category: documentation
-tags: [architecture]
+title: "Easily build your own tech radar"
+categories:
+  - Documentation
+tags:
+  - architecture
 date: 2018-10-15
 ---
 :radar: https://www.thoughtworks.com/radar

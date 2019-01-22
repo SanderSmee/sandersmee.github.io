@@ -1,11 +1,11 @@
 ---
-title:  "Asciidoc labels like swagger-ui"
-date: 2018-09-14 20:00:00
+title: "Asciidoc labels like swagger-ui"
 categories:
-    - documentation
+  - Documentation
 tags:
-    - asciidoc
-    - swagger-ui
+  - asciidoc
+  - swagger-ui
+date: 2018-09-14
 ---
 :1: http://springfox.github.io/springfox/
 :2: https://spring.io/projects/spring-restdocs
