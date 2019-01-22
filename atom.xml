@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2019-01-19T15:45:48.550Z</updated>
+  <updated>2019-01-22T19:26:25.378Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/"/>
     <id>http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2019-01-19T15:45:48.550Z</updated>
+    <updated>2019-01-22T19:26:25.378Z</updated>
     
     <summary type="html">
     
@@ -33,7 +33,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     
     </summary>
     
-      <category term="programming" scheme="http://thoughts.tostring.blog/category/programming/"/>
+      <category term="Programming" scheme="http://thoughts.tostring.blog/category/Programming/"/>
     
     
       <category term="maven" scheme="http://thoughts.tostring.blog/tags/maven/"/>
@@ -47,7 +47,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     <link href="http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/"/>
     <id>http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2019-01-19T15:45:48.550Z</updated>
+    <updated>2019-01-22T19:26:25.378Z</updated>
     
     <summary type="html">
     
@@ -59,7 +59,7 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     
     </summary>
     
-      <category term="documentation" scheme="http://thoughts.tostring.blog/category/documentation/"/>
+      <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
     
       <category term="architecture" scheme="http://thoughts.tostring.blog/tags/architecture/"/>
@@ -71,7 +71,7 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     <link href="http://thoughts.tostring.blog/2018/09/plantuml-swagger/"/>
     <id>http://thoughts.tostring.blog/2018/09/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2019-01-19T15:45:48.550Z</updated>
+    <updated>2019-01-22T19:26:25.378Z</updated>
     
     <summary type="html">
     
@@ -83,7 +83,7 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     
     </summary>
     
-      <category term="documentation" scheme="http://thoughts.tostring.blog/category/documentation/"/>
+      <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
     
       <category term="asciidoc" scheme="http://thoughts.tostring.blog/tags/asciidoc/"/>
@@ -98,8 +98,8 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     <title>Asciidoc labels like swagger-ui</title>
     <link href="http://thoughts.tostring.blog/2018/09/asciidoc-swagger/"/>
     <id>http://thoughts.tostring.blog/2018/09/asciidoc-swagger/</id>
-    <published>2018-09-14T18:00:00.000Z</published>
-    <updated>2019-01-19T15:45:48.550Z</updated>
+    <published>2018-09-13T22:00:00.000Z</published>
+    <updated>2019-01-22T19:26:25.378Z</updated>
     
     <summary type="html">
     
@@ -111,7 +111,7 @@ And what&amp;#8217;s best is that you can simply combine the two in a project.&l
     
     </summary>
     
-      <category term="documentation" scheme="http://thoughts.tostring.blog/category/documentation/"/>
+      <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
     
       <category term="asciidoc" scheme="http://thoughts.tostring.blog/tags/asciidoc/"/>
@@ -125,30 +125,18 @@ And what&amp;#8217;s best is that you can simply combine the two in a project.&l
     <link href="http://thoughts.tostring.blog/2018/09/spock-jupiter/"/>
     <id>http://thoughts.tostring.blog/2018/09/spock-jupiter/</id>
     <published>2018-09-05T22:00:00.000Z</published>
-    <updated>2019-01-19T15:45:48.550Z</updated>
+    <updated>2018-09-30T22:00:00.000Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;admonitionblock note&quot;&gt;
-&lt;table&gt;
-&lt;tr&gt;
-&lt;td class=&quot;icon&quot;&gt;
-&lt;i class=&quot;fa icon-note&quot; title=&quot;Note&quot;&gt;&lt;/i&gt;
-&lt;/td&gt;
-&lt;td class=&quot;content&quot;&gt;
-2018-10-01: Update for Spock 1.2 release
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;div class=&quot;paragraph&quot;&gt;
+      &lt;div class=&quot;paragraph&quot;&gt;
 &lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018.
 Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
 &lt;/div&gt;
     
     </summary>
     
-      <category term="programming" scheme="http://thoughts.tostring.blog/category/programming/"/>
+      <category term="Programming" scheme="http://thoughts.tostring.blog/category/Programming/"/>
     
     
       <category term="junit" scheme="http://thoughts.tostring.blog/tags/junit/"/>
