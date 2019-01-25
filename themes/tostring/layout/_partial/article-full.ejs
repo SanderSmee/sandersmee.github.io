@@ -14,6 +14,7 @@
                         <%- item.subtitle %>
                     </h2>
                     <% } %>
+                    <% if (item.layout == 'post') { %>
                     <span class="meta">
                         <!-- Date and Author -->
                         <span class="meta__item">
@@ -28,6 +29,7 @@
                         <%- readingTime(page.content, 'minutes read') %>
                         </span>
                     </span>
+                    <% } %>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 ---
-layout: page
 title: '404.toString()'
+layout: page
+cover: //source.unsplash.com/mZOnsxS9Cl0
 ---
 
 == "Not Found".equals(404.toString())
