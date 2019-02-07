@@ -1,5 +1,6 @@
 ---
 title: "Reduce the code to noise ratio of maven POMs"
+cover: //source.unsplash.com/FO7JIlwjOtU
 categories:
   - Programming
 tags:
