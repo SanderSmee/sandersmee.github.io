@@ -96,6 +96,12 @@ sitemap:
 
 all_minifier: true
 
+# Post series
+post_series:
+  list_title: 'All articles in series "@series@"'
+  open_in_new_tab: false
+  reverse_sort: false
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
