@@ -1,0 +1,55 @@
+---
+title: Testable architecture
+cover: //source.unsplash.com/92dgYPsir9k
+categories:
+  - Architecture
+tags:
+  - hexagonal
+  - test
+date: 2019-02-07
+---
+
+My coworker points me to the presentation of Aslak Hellesøy, https://www.youtube.com/watch?v=PE_1nh0DdbY[Sub-second acceptance tests].
+As we're struggling with long running and brittle acceptance tests, that provoking title triggers my interest, and I start watching the recording...
+
+++++
+<!-- more -->
+++++
+
+The most interesting thing about the talk is not the speed of the tests, but of course how to accomplish faster tests.
+Less surprising might be that there isn't a lightning fast (test) framework that can deliver the sub-second tests.
+And also that there's no magical trick to get those tests so fast.
+Getting to fast acceptance tests has all to do with good software architecture practices.
+
+== Composing software
+Being able to exchange certain parts of your system can make that system easier to test.
+If the parts you can replace contain the bounds of the system, then those bounds can temporarily be put aside.
+The bounds we're referring to are the IO-bounds of a system, for example  a HTTP call to the system, or a connection the system has to a database.
+
+For parts of your system to be easy replaceable, they need well thought of interfaces or (API) contracts.
+This correspondents to the _Liskov substitution principle_ one of the https://en.wikipedia.org/wiki/SOLID[SOLID] principles.
+An IO-bound implementation of that contract could be replaced with a mock or stub without altering the correctness of that subpart of the system.
+
+== Acceptance tests
+Secondly is that acceptance test descriptions should be decoupled from how they interact with the system under test.
+When those test contain only functional or business language, it's up to a framework like cucumber to connect those descriptions to the system to test.
+And that, combined with the API or interfaces of the business domain, let's you choose what parts of the system you want during the execution of the tests.
+
+== Testable architecture
+Aslak recommends the talk https://www.youtube.com/watch?v=Fk4rCn4YLLU[End to end functional tests that can run in milliseconds] by Nat Pryce.
+Nat mentions the software architecture that enables these abilities: https://web.archive.org/web/20180822100852/http://alistair.cockburn.us/Hexagonal+architecture[hexagonal architecture].
+He has written before about testing well architected software in http://www.natpryce.com/articles/000772.html[Visualising Test Terminology].
+These ideas are repeated by Aslak in his previous talk https://www.youtube.com/watch?v=uwH83PjR98g[Testable Architectures].
+
+== Conclusion
+So, if you want you your tests to be easier to write and faster to execute, it's important to have an architecture that supports that.
+Hexagonal architecture does that by separating technical and business concerns.
+When you also keep technical concerns out of your acceptance tests, you may connect those directly to the business interfaces of the system.
+Thereby avoiding the technical, and usually slowest, part of the system, to increase the speed of acceptance test execution.
+
+////
+:1: https://speakerdeck.com/aslakhellesoy/sub-second-acceptance-tests-seleniumconf-2018
+:2: https://github.com/subsecondtdd
+:3: https://speakerdeck.com/aslakhellesoy/testable-architecture-devlin-2017
+:4: https://docs.cucumber.io/guides/testable-architecture/
+////
