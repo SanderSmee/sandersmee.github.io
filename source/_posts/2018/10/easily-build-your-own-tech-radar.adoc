@@ -91,3 +91,8 @@ fetch('./data.csv')
         draw_radar(entries);
     });
 ----
+
+When you have followed the above steps, the result should look like this:
+
+.Example of tech radar after following the article
+image::/images/tech-radar-example.png[Example tech radar]
