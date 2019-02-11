@@ -5,7 +5,8 @@ cover: //source.unsplash.com/HFG53IIJ8y0 # TL5Vy1IM-uA
 permalink: /about/
 ---
 
-I'm a Developer and Software Architect with a passion for building modular, scalable software, using services, microservices and cloud technologies.
+My name is Sander Smeman.
+I'm a Developer and Software Architect passionate about building modular, scalable software, using services, microservices and cloud technologies.
 
 I have over 10 years of experience in software development and API design, using techniques and technologies like agile, XP, DDD, TDD, hexagonal architecture, microservices, devops, docs-as-code, CQRS and event-sourcing.
 I spent my early years in the software industry as a developer (Java/Front-end) before later adding architecture & design to my skillset.
