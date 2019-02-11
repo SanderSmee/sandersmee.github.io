@@ -1,0 +1,35 @@
+---
+title: 'The thoughts belong to ...'
+layout: page
+cover: //source.unsplash.com/HFG53IIJ8y0 # TL5Vy1IM-uA
+permalink: /about/
+---
+
+I'm a Developer and Software Architect with a passion for building modular, scalable software, using services, microservices and cloud technologies.
+
+I have over 10 years of experience in software development and API design, using techniques and technologies like agile, XP, DDD, TDD, hexagonal architecture, microservices, devops, docs-as-code, CQRS and event-sourcing.
+I spent my early years in the software industry as a developer (Java/Front-end) before later adding architecture & design to my skillset.
+
+As a Software Architect, typical activities are:
+
+* Analysing business problems
+* Designing software solutions
+* Writing code and creating prototypes
+* Guiding developers & consulting with stakeholders
+* Documenting designed solutions
+
+The tools and techniques I use change all the time, but most recently they have been:
+
+* Java & Spring Boot
+* PostgreSQL & Hibernate
+* Docker containers
+* Maven, Gradle, Git, Groovy, Asciidoc, IntelliJ
+* Angular, Thymeleaf, HTML, CSS
+* Scrum, extreme programming
+
+I'm considered a valuable asset to the team I work in, because of my thorough analytic skills and wide knowledge of available tools and frameworks.
+I thrive best in teams that communicate open and honest and are dedicated to delivering valuable solution for their customers.
+
+== Employment
+I work at the wonderful company https://jdriven.com[JDriven].
+There I have ~35 collegues passionate about creating software, craftmanship and software architecture.
