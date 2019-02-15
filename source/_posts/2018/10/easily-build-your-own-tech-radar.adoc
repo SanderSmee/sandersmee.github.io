@@ -1,6 +1,9 @@
 ---
 title: "Easily build your own tech radar"
 cover: //source.unsplash.com/VK284NKoAVU
+cover_credit:
+  url: //unsplash.com/photos/VK284NKoAVU
+  artist: Samuel Zeller
 categories:
   - Documentation
 tags:

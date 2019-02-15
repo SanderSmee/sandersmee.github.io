@@ -1,6 +1,9 @@
 ---
 title: Testable architecture
 cover: //source.unsplash.com/92dgYPsir9k
+cover_credit:
+  url: //unsplash.com/photos/92dgYPsir9k
+  artist: Raphael Koh
 categories:
   - Architecture
 tags:
