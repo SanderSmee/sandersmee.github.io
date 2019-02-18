@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "asciidoctor.js": "~1.5.9",
-    "bootstrap": "~3.4.0",
+    "bootstrap": "^3.4.1",
     "hexo": "~3.8.0",
     "hexo-all-minifier": "~0.5.3",
     "hexo-auto-canonical": "~0.1.1",
