@@ -21,10 +21,28 @@ google_analytics: UA-8287349-4
 # set your own favicon
 favicon:
 
+highlight:
+  enable: true
+
 # Social Accounts
 footer:
-  twitter_url: https://twitter.com/osusso
-  twitter_handle: '@osusso'
-  github_url: https://github.com/sandersmee/sandersmee.github.io
-  linkedin_url: https://www.linkedin.com/in/sandersmeman/
-  mailto: sander.smeman@gmail.com
+  RSS:
+    link: /atom.xml
+    title: RSS
+    icon: fas fa-rss
+  twitter:
+    link: https://twitter.com/osusso
+    title: Twitter
+    icon: fab fa-twitter
+  github:
+    link: https://github.com/sandersmee/sandersmee.github.io
+    title: Github
+    icon: fab fa-github
+  mail:
+    link: mailto:sander.smeman@gmail.com
+    title: mail
+    icon: fas fa-envelope
+  linkedin:
+    link: https://www.linkedin.com/in/sandersmeman/
+    title: linkedin
+    icon: fab fa-linkedin

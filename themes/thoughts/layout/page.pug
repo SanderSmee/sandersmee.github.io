@@ -1,10 +1,21 @@
 extends partial/base
 
+block description
+    meta(name="description", content=page.title)
+
+block site_title
+    = page.title
+
 block header
+    header.header-section
+        .intro-header(style='background-image: url(' + (page.cover || theme.index_cover) + ');')
+            .container
+                .row.justify-content-center
+                    .col-12.col-lg-8
+                        h1.page-heading!= page.title
+            span.img-desc
 
 block content
     .container
         .row.justify-content-center
-            .col-lg-10.col-12
-                article(role="main", class="blog-post")
-                    != page.content
+            .col-lg-8.col-12!= page.content

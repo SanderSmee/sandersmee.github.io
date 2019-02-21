@@ -2,11 +2,11 @@ include post-meta
 
 mixin post_preview(post)
     article.post-preview
+        if post.categories
+            - post.categories.each(function(category) {
+            a.category(href=url_for(category.path))=category.name
+            - })
         header.post-header
-            if post.categories
-                - post.categories.each(function(category) {
-                a.category(href=url_for(category.path))=category.name
-                - })
             a(href=url_for(post.path))
                 h2.post-title!= post.title
                 if post.subtitle

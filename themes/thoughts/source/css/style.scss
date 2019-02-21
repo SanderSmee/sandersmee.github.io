@@ -14,7 +14,7 @@
   }
 
   @include media-breakpoint-up(lg) {
-    width: 50%;
+    width: 45%;
     margin: $grid-gutter-width;
 
     &.push-right {

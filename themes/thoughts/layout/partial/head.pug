@@ -7,6 +7,7 @@ meta(name="robots", content="all")
 title
     block site_title
        = page.title || config.title
+
 block description
     meta(name="description", content=config.description)
 
@@ -38,8 +39,8 @@ link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Lora:400,700,400i
 link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800")
 
 link(rel="stylesheet", href=url_for("/css/style.css?v=" + config.version.css))
+link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css")
 
-if theme.highlight.enable
-    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css")
+block structured_data
 
 include google_analytics

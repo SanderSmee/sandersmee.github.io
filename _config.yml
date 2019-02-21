@@ -4,7 +4,7 @@
 
 # Site
 icon_title: <i class="fas fa-brain"></i>.toString();
-title: thoughts.tostring();
+title: thoughts.toString();
 subtitle: My thoughts.toString(); For you to explore
 description:
 keywords: Blog, Java, Groovy, Asciidoctor, Architecture
@@ -65,6 +65,12 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+
+
+# Category
+category:
+  header:
+    foo: 'none'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
