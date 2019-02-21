@@ -10,35 +10,21 @@ menu:
 menu_title: thoughts.toString();
 
 # URL of the Home page image
-index_cover: https://source.unsplash.com/dC6Pb2JdAqs
+index_cover: //source.unsplash.com/dC6Pb2JdAqs
 
 # Default post title
 default_post_title: Untitled
 
-# Comments. Choose one by filling up the information
-comments:
-  # Disqus comments
-  disqus_shortname:
-  # Facebook comments
-  facebook:
-    appid:
-    comment_count: 5
-    comment_colorscheme: light
-
 # Google Analytics Tracking ID
 google_analytics: UA-8287349-4
-
-# Addthis ID
-addthis:
 
 # set your own favicon
 favicon:
 
 # Social Accounts
-twitter_url: https://twitter.com/osusso
-twitter_handle: '@osusso'
-facebook_url:
-github_url: https://github.com/sandersmee/sandersmee.github.io
-gitlab_url:
-linkedin_url: https://www.linkedin.com/in/sandersmeman/
-mailto: sander.smeman@gmail.com
+footer:
+  twitter_url: https://twitter.com/osusso
+  twitter_handle: '@osusso'
+  github_url: https://github.com/sandersmee/sandersmee.github.io
+  linkedin_url: https://www.linkedin.com/in/sandersmeman/
+  mailto: sander.smeman@gmail.com

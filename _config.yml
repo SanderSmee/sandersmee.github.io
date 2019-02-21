@@ -85,7 +85,7 @@ feed:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: tostring
+theme: thoughts
 
 marked:
   breaks: false
@@ -109,3 +109,7 @@ deploy:
   type: git
   repo: git@github.com:sandersmee/sandersmee.github.io.git
   branch: master
+
+version:
+  css: 1
+  js: 1

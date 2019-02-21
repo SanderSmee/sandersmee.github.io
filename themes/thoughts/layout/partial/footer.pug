@@ -1,0 +1,31 @@
+
+footer.site-footer
+    div.container-fluid
+        div.row.justify-content-center
+            .col-10
+                .row
+                    .col-lg-4
+                        h4!= config.title + " © " + date(Date.now(), 'YYYY')
+                        p
+                            em!="\"" + config.subtitle + "\""
+                        p.
+                            This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+
+                    .col-lg-4
+                        h4.marked!="Recent articles"
+                        section.recent-posts
+                            != list_posts({limit: 5})
+
+                    .col-lg-4
+                        h4.marked!="Stay connected"
+                        .social-links
+                            ul
+                                //- each value, key in theme["footer"]
+                                //-     li
+                                //-         a(href=value.link, onclick="window.open(this.href);return false;")
+                                //-             span.fa(class=value.icon)
+
+                        h4.marked!="Most popular tags"
+
+                        section.tagcloud
+                            != tagcloud(site.tags.sort('length', 'desc').limit(25), { unit: 'pt', min_font: 8, max_font: 32, start_color: '#6a6a6a', end_color: '#bababa', color: true })

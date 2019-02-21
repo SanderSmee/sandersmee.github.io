@@ -1,0 +1,6 @@
+mixin post_meta(post)
+    div.post-meta
+        ul
+            li
+                time(datetime=date_xml(post.date), itemprop="datePublished")!= post.date.format(config.date_format)
+            li= readingTime(post.content, 'minutes read', 150)
