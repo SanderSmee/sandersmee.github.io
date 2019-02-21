@@ -27,7 +27,13 @@ Getting to fast acceptance tests has all to do with good software architecture p
 == Composing software
 Being able to exchange certain parts of your system can make that system easier to test.
 If the parts you can replace contain the bounds of the system, then those bounds can temporarily be put aside.
-The bounds we're referring to are the IO-bounds of a system, for example  a HTTP call to the system, or a connection the system has to a database.
+
+[.series.push-right]
+****
+The bounds we're referring to are the IO-bounds of a system, for example
+
+a HTTP call to the system, or a connection the system has to a database.
+****
 
 For parts of your system to be easy replaceable, they need well thought of interfaces or (API) contracts.
 This correspondents to the _Liskov substitution principle_ one of the https://en.wikipedia.org/wiki/SOLID[SOLID] principles.
