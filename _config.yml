@@ -3,7 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: <i class="fas fa-brain"></i>.toString();
+icon_title: <i class="fas fa-brain"></i>.toString();
+title: thoughts.tostring();
 subtitle: My thoughts.toString(); For you to explore
 description:
 keywords: Blog, Java, Groovy, Asciidoctor, Architecture
