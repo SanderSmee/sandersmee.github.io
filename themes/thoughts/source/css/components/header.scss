@@ -1,0 +1,23 @@
+.header-section {
+  margin-bottom: 3rem;
+
+}
+.intro-header {
+  background-attachment: scroll;
+  background-color: grey;
+  background-position: center center;
+  background-size: cover;
+
+  .site-heading, .post-heading, .page-heading {
+    padding: 150px 0;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+      font-weight: 800;
+    }
+    hr {
+      color: #fff;
+    }
+  }
+}
