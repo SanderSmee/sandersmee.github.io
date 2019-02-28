@@ -1,8 +1,8 @@
 @mixin serif() {
-  font-family: 'Lora', 'Times New Roman', serif
+  font-family: $font-serif;
 }
 @mixin sans-serif() {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $font-sans-serif;
 }
 
 .serif {
@@ -13,6 +13,9 @@
   @include sans-serif();
 }
 
-body {
-  @include serif();
+p {
+    font-size: 1.3rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
 }
