@@ -1,0 +1,96 @@
+---
+title: Custom, optional attributes in spring-restdocs
+date: 2019-03-20 17:09:20
+tags:
+  - documentation
+  - spring-restdocs
+  - asciidoc
+categories:
+  - Howto
+---
+:1: https://docs.spring.io/spring-restdocs/docs/2.0.3.RELEASE/reference/html5/#documenting-your-api-customizing
+:2: https://github.com/samskivert/jmustache#this
+:3: https://github.com/spring-projects/spring-restdocs/issues/291#issuecomment-433998972
+
+Documenting spring restcontrollers with spring-restdocs is a sure way to get great documentation.
+It allows one to document API endpoints based on examples used in a test, and document specific fields in a response.
+It's even possible to document additional attributes of a field in a JSON response.
+
+Here, from the {1}[documentation], is added the attribute `constraints`, but with one caveat: it's missing for one field:
+
+[source, java]
+.Spring @WebMvcTest with spring-restdocs
+----
+.andDo(document("create-user", requestFields(
+	attributes(key("title").value("Fields for user creation")),
+	fieldWithPath("name").description("The user's name")
+		.attributes(key("constraints")
+			.value("Must not be null. Must not be empty")),
+    fieldWithPath("age").description("The user's age"), // <1>
+	fieldWithPath("email").description("The user's email address")
+		.attributes(key("constraints")
+			.value("Must be a valid email address")))));
+----
+<1> An extra field, but without added documentation for the `constraints` attribute.
+
+==  Include the attribute in the documentation
+By default those additional attributes don't appear in the generated documents.
+For that to happen, you have to override the spring-restdocs snippets, by placing a snippet on the test-classpath.
+In standard project structure this is done, by putting those snippets in `src/test/resources/org/springframework/restdocs/templates/asciidoctor` per the documentation.
+
+[NOTE]
+For displaying purpose, mustache handles are written as ``{ {`` and ``} }``, instead of its double curly brances.
+When using these snippets, remove the redundant spaces between them.
+
+For the request fields, that snippet is then:
+
+[source, mustache]
+.request-fields.snippet
+----
+.{ {title} }
+|===
+|Path|Type|Description|Constraints
+
+{ { #fields } }
+|{ {path} }
+|{ {type} }
+|{ {description} }
+|{ {constraints} }
+
+{ { /fields } }
+|===
+----
+
+But running this test results in an failure reporting that the added attribute is not present:
+
+[source, shell]
+----
+org.springframework.restdocs.mustache.MustacheException$Context: No method or field with name 'constraints' on line 9
+----
+This can be a convenient reminder that you have not completely documented the fields, but if you deliberately omitted the `constraint` attribute you wouldn't want the failure.
+
+== Solution
+To provide a solution for the above problem, I had to search through the reported issues in the spring-restdocs https://github.com/spring-projects/spring-restdocs/[github issues] to find the solution:
+
+[source, mustache]
+.request-fields.snippet with adjustment
+----
+.{ {title} }
+|===
+|Path|Type|Description|Constraints
+
+{ { #fields } }
+|{ {path} }
+|{ {type} }
+|{ {description} }
+|{ { #constraints } }{ {.} }{ { /constraints } } //<1>
+
+{ { /fields } }
+
+|===
+----
+<1> Different mustache notation for the constraints attribute
+
+This uses the mustache `.` {2}[special variable]. `&num;constraints` is now treated as a context, and evaluates to false when absent, or an empty list.
+But when a value is present, it evaluates and renders that value, which is then referenced as `this` by the `.`.
+This might be better explained in the {3}[comments] of issue &num;291 .
