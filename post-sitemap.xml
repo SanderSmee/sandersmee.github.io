@@ -9,31 +9,7 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/2018/09/asciidoc-swagger/</loc>
-        <lastmod>2019-02-22T10:24:09.771Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/</loc>
-        <lastmod>2019-02-22T10:24:09.771Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/</loc>
-        <lastmod>2019-02-22T10:24:09.771Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://thoughts.tostring.blog/2019/02/testable-architecture/</loc>
-        <lastmod>2019-02-22T10:24:09.771Z</lastmod>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,7 +17,39 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/2018/09/plantuml-swagger/</loc>
-        <lastmod>2019-02-22T10:24:09.771Z</lastmod>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/</loc>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/</loc>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://thoughts.tostring.blog/2019/02/testable-architecture/</loc>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://thoughts.tostring.blog/2019/03/custom-attributes-in-spring-restdocs/</loc>
+        <lastmod>2019-03-20T21:22:33.360Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
