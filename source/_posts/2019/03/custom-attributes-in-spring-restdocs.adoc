@@ -16,6 +16,10 @@ Documenting spring restcontrollers with spring-restdocs is a sure way to get gre
 It allows one to document API endpoints based on examples used in a test, and document specific fields in a response.
 It's even possible to document additional attributes of a field in a JSON response.
 
+++++
+<!-- more -->
+++++
+
 Here, from the {1}[documentation], is added the attribute `constraints`, but with one caveat: it's missing for one field:
 
 [source, java]
