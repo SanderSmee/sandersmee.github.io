@@ -1,6 +1,6 @@
 'use strict'
 
-const asciidoctor = require('asciidoctor.js')();
+const asciidoctor = require('asciidoctor')();
 // const path = require('path');
 
 const opts = {
@@ -18,12 +18,6 @@ const opts = {
 };
 
 function render(data, options) {
-    // if (data.path) {
-    //     const entry = path.parse(data.path);
-    //     const assetDir = path.join(entry.dir, entry.name);
-    //     opts.attributes.docdir = assetDir;
-    // }
-
     return asciidoctor.convert(data.text, opts);
 }
 
