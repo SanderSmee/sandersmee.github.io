@@ -3,3 +3,25 @@
     margin-bottom: 3rem;
   }
 }
+
+a {
+    &.category {
+        background-color: var(--primary);
+        color: var(--dark);
+        padding: .2em .5em;
+        @include sans-serif();
+        margin-bottom: .5em;
+    }
+}
+
+.post-header {
+    a {
+        color: $black;
+    }
+    .post-title {
+        margin-top: .5em;
+    }
+}
+.post-meta {
+    float: left;
+}

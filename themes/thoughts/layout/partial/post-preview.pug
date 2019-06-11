@@ -13,5 +13,5 @@ mixin post_preview(post)
                     h3.post-subtitle!= post.subtitle
         section.post-excerpt!= post.excerpt
         +post_meta(post)
-        p.post-read-more
+        p.post-read-more.text-right
             a.btn.btn-outline-dark(href=url_for(post.path) + '#more')="Read more →"
