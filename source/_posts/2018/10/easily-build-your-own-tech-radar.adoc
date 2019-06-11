@@ -9,6 +9,7 @@ categories:
 tags:
   - architecture
 date: 2018-10-15
+alias: 2018/10/easily-build-your-own-tech-radar/
 ---
 :radar: https://www.thoughtworks.com/radar
 :1: https://github.com/zalando/tech-radar

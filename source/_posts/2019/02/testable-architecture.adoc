@@ -10,6 +10,7 @@ tags:
   - hexagonal
   - test
 date: 2019-02-07
+alias: 2019/02/testable-architecture/
 ---
 
 My coworker points me to the presentation of Aslak Hellesøy, https://www.youtube.com/watch?v=PE_1nh0DdbY[Sub-second acceptance tests].

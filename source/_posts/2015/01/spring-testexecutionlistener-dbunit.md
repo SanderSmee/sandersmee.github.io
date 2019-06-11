@@ -5,8 +5,9 @@ categories:
 tags:
   - spring
   - dbunit
-date: 2015-01-01
+date: 2015-01-01.
 published: false
+alias: "2015/01/spring-testexecutionlistener-dbunit/"
 ---
 You can use Spring `TestExecutionListener` to load DBUnit data per test class.
 

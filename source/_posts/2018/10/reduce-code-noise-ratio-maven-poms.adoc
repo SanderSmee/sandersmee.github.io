@@ -10,6 +10,7 @@ tags:
   - maven
   - yaml
 date: 2018-10-29
+alias: 2018/10/reduce-code-noise-ratio-maven-poms/
 ---
 :polyglot: https://github.com/takari/polyglot-maven
 

@@ -10,6 +10,7 @@ date: 2018-09-06
 updated: 2018-10-01
 update_notes:
   - "2018-10-01: Update for Spock 1.2 release"
+alias: 2018/09/spock-jupiter/
 ---
 
 :1: https://junit.org/junit5/
