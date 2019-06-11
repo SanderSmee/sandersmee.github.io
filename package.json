@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "asciidoctor": "^2.0.3",
+    "asciidoctor-html5s": "^0.2.0",
     "bootstrap": "~4.3.1",
     "hexo": "~3.8.0",
     "hexo-all-minifier": "~0.5.3",
