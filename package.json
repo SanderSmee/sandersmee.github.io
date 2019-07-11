@@ -4,13 +4,13 @@
   "description": "Personal website",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "asciidoctor-html5s": "^0.2.0",
     "bootstrap": "~4.3.1",
-    "hexo": "~3.8.0",
+    "hexo": "~3.9.0",
     "hexo-all-minifier": "~0.5.3",
     "hexo-auto-canonical": "~0.1.1",
     "hexo-deployer-git": "~1.0.0",
