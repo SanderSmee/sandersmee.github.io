@@ -19,7 +19,7 @@ block header
             span.img-desc
 
 block content
-    .container
+    main.container
         .row.justify-content-center
             .col-lg-10.col-12
                 - var archive = site.posts.sort('date').reverse().reduce(function(acc,post) {
@@ -30,15 +30,16 @@ block content
                 - }, {});
 
                 - var years = Object.keys(archive).sort().reverse();
-
-                ul.archive-list
-                    - years.forEach(function(year) {
+                - years.forEach(function(year) {
+                section
                     h2=year
-                        span.small=archive[year].length
-                    - var posts = archive[year];
+                        span.small.badge.badge-secondary=archive[year].length
+                - var posts = archive[year];
+                dl.row
                     - posts.forEach(function(post) {
-                    li.col-lg-offset-1.col-md-offset-1
+                    dt.col-2
                         span.post-meta=full_date(post.date, 'MMM D')
+                    dd.col-10
                         a.post-title(href=url_for(post.path))=post.title
                     - });
-                    - });
+                - });

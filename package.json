@@ -6,10 +6,16 @@
   "hexo": {
     "version": "3.9.0"
   },
+  "scripts": {
+    "hexo": "hexo",
+    "postinstall": "cd themes/thoughts && npm install",
+    "start": "hexo server --draft --config _config.yml",
+    "clean": "hexo clean",
+    "build": "npm install && hexo generate"
+  },
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "asciidoctor-html5s": "^0.2.0",
-    "bootstrap": "~4.3.1",
     "hexo": "~3.9.0",
     "hexo-all-minifier": "~0.5.3",
     "hexo-auto-canonical": "~0.1.1",
@@ -26,7 +32,8 @@
     "hexo-render-pug": "^2.1.4",
     "hexo-renderer-marked": "^1.0.0",
     "hexo-renderer-sass": "^0.4.0",
-    "hexo-util": "~0.6.3"
+    "hexo-util": "~0.6.3",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "hexo-browsersync": "^0.3.0",

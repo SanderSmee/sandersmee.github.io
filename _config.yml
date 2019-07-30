@@ -115,7 +115,7 @@ js_minifier:
 post_series:
   list_title: 'All articles in series "@series@"'
   open_in_new_tab: false
-  reverse_sort: false
+  reverse_sort: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

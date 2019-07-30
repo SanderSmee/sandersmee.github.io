@@ -1,8 +1,9 @@
 mixin pagination(page)
-    ul.pager.main-pager
-        if page.prev
-            li.previous
-                a.btn.btn-outline-dark(href=url_for(config.root + page.prev_link))!= '&larr; Previous page'
-        if page.next
-            li.next
-                a.btn.btn-outline-dark(href=url_for(config.root + page.next_link))!= 'Next page &rarr;'
+    nav(aria-label='Page navigation')
+        ul.pagination.justify-content-center
+            if page.prev
+                li.previous.page-item
+                    a.page-link(href=url_for(config.root + page.prev_link))!= '&larr; Previous page'
+            if page.next
+                li.next.page-item
+                    a.page-link(href=url_for(config.root + page.next_link))!= 'Next page &rarr;'

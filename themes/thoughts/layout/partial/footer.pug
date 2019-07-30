@@ -19,9 +19,9 @@ footer.site-footer
                     .col-lg-4
                         h4.marked!="Stay connected"
                         .social-links
-                            ul
+                            ul.list-inline
                                 each value, key in theme["footer"]
-                                    li
+                                    li.list-inline-item
                                         a(href=value.link, title=value.title, onclick="window.open(this.href);return false;")
                                             span(class=value.icon)
 
@@ -30,17 +30,17 @@ footer.site-footer
                         section.tagcloud
                             != tagcloud(site.tags.sort('length', 'desc').limit(25), { unit: 'pt', min_font: 8, max_font: 32, start_color: '#6a6a6a', end_color: '#bababa', color: true })
 
-    section.poweredby
-        ul.text-center
-            li
-                span="Published with "
-                a(href="https://hexo.io", onclick="window.open(this.href);return false;")
-                    img(src="/img/logo-hexo.png")
-            li
-                span="Hosted on "
-                a(href="https://github.com/wololock/wololock.github.io", onclick="window.open(this.href);return false;")
-                    img(src="/img/logo-github.png")
-            li
-                span="Deployed with "
-                a(href="https://travis-ci.org/wololock/wololock.github.io", onclick="window.open(this.href);return false;")
-                    img(src="/img/logo-travis.png")
+    //- section.poweredby
+    //-     ul.text-center
+    //-         li
+    //-             span="Published with "
+    //-             a(href="https://hexo.io", onclick="window.open(this.href);return false;")
+    //-                 img(src="/img/logo-hexo.png")
+    //-         li
+    //-             span="Hosted on "
+    //-             a(href="https://github.com/wololock/wololock.github.io", onclick="window.open(this.href);return false;")
+    //-                 img(src="/img/logo-github.png")
+    //-         li
+    //-             span="Deployed with "
+    //-             a(href="https://travis-ci.org/wololock/wololock.github.io", onclick="window.open(this.href);return false;")
+    //-                 img(src="/img/logo-travis.png")

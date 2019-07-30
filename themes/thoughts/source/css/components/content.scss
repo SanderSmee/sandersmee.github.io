@@ -1,0 +1,11 @@
+figure {
+    figcaption {
+        font-style: italic;
+    }
+
+    &.image-block {
+        img {
+            width: 100%;
+        }
+    }
+}

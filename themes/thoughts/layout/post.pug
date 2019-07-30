@@ -1,6 +1,7 @@
 extends partial/base
 
 include partial/post-meta
+include partial/pagination
 //- include partial/post-related
 
 block description
@@ -23,7 +24,7 @@ block header
                             +post_meta(page)
 
 block content
-    .container
+    main.container
         .row.justify-content-center
             .col-lg-10.col-12
                 article(role="main", class="blog-post")
@@ -33,8 +34,12 @@ block content
 
                     //- +post_related(popular_posts_json({ maxCount: 3, isImage: true, isExcerpt: true }, page))
 
-                nav(role="pagination", class="pagination")
+                    != posts_in_same_series_list(page)
+
+                nav.pagination.justify-content-center(role="pagination")
                     if page.prev
-                        a.float-left.btn(href=url_for(page.prev.path))!= '&larr; Next post'
+                        li.next.page-item
+                            a.float-left.page-link(href=url_for(page.prev.path))!= '&larr; Next post'
                     if page.next
-                        a.float-right.btn(href=url_for(page.next.path))!= 'Previous post &rarr;'
+                        li.previous.page-item
+                            a.float-right.page-link(href=url_for(page.next.path))!= 'Previous post &rarr;'
