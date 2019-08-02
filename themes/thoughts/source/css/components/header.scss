@@ -33,3 +33,10 @@
       }
   }
 }
+
+.post-meta {
+    @include sans-serif();
+    li {
+        padding-right: 1.5em;
+    }
+}

@@ -7,7 +7,6 @@ tags:
   - swagger-ui
 date: 2018-09-14
 alias: 2018/09/asciidoc-swagger/
-series: Swagger
 ---
 :1: http://springfox.github.io/springfox/
 :2: https://spring.io/projects/spring-restdocs

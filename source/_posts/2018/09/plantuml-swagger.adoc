@@ -8,7 +8,6 @@ tags:
   - swagger-ui
 date: 2018-09-16
 alias: 2018/09/plantuml-swagger/
-series: Swagger
 ---
 :1: http://plantuml.com/
 :2: ../asciidoc-swagger
