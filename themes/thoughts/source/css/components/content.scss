@@ -9,3 +9,46 @@ figure {
         }
     }
 }
+
+aside,section {
+    &.admonition-block {
+        display: flex;
+        align-items: stretch;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        h6 {
+            margin-bottom: 0;
+            padding-right: 1rem;
+            flex-grow: 1;
+        }
+        p {
+            padding-left: 1rem;
+        }
+        p:last-child {
+            margin-bottom: 0;
+
+        }
+    }
+    &.note {
+        @include alert-variant(theme-color-level('warning', $alert-bg-level), theme-color-level('warning', $alert-border-level), theme-color-level('warning', $alert-color-level));
+        h6 {
+            border-right: 1px solid $warning;
+        }
+    }
+    &.tip {
+        @include alert-variant(theme-color-level('info', $alert-bg-level), theme-color-level('info', $alert-border-level), theme-color-level('info', $alert-color-level));
+        h6 {
+            border-right: 1px solid $info;
+        }
+    }
+    &.warning {
+        @include alert-variant(theme-color-level('danger', $alert-bg-level), theme-color-level('danger', $alert-border-level), theme-color-level('danger', $alert-color-level));
+        h6 {
+            border-right: 1px solid $danger;
+        }
+    }
+}
+
+h2 sup {
+    margin-left: .5rem;
+}

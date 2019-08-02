@@ -33,7 +33,7 @@ block content
                 - years.forEach(function(year) {
                 section
                     h2=year
-                        span.small.badge.badge-secondary=archive[year].length
+                        sup.badge.badge-primary.text-white=archive[year].length
                 - var posts = archive[year];
                 dl.row
                     - posts.forEach(function(post) {
