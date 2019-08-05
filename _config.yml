@@ -110,6 +110,7 @@ js_minifier:
   exclude:
     - '*.min.js'
     - '*.pack.js'
+    - '**/node_modules/**'
 
 # Post series
 post_series:
