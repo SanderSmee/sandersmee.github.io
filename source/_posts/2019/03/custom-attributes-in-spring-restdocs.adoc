@@ -42,26 +42,22 @@ By default those additional attributes don't appear in the generated documents.
 For that to happen, you have to override the spring-restdocs snippets, by placing a snippet on the test-classpath.
 In standard project structure this is done, by putting those snippets in `src/test/resources/org/springframework/restdocs/templates/asciidoctor` per the documentation.
 
-[NOTE]
-For displaying purpose, mustache handles are written as ``{ {`` and ``} }``, instead of its double curly brances.
-When using these snippets, remove the redundant spaces between them.
-
 For the request fields, that snippet is then:
 
 [source, mustache]
 .request-fields.snippet
 ----
-.{ {title} }
+.{{ '{{title}}' }}
 |===
 |Path|Type|Description|Constraints
 
-{ { #fields } }
-|{ {path} }
-|{ {type} }
-|{ {description} }
-|{ {constraints} }
+{{ '{{ #fields }}' }}
+|{{ '{{path}}' }}
+|{{ '{{type}}' }}
+|{{ '{{description}}' }}
+|{{ '{{constraints}}' }}
 
-{ { /fields } }
+{{ '{{ /fields }}' }}
 |===
 ----
 
@@ -79,17 +75,17 @@ To provide a solution for the above problem, I had to search through the reporte
 [source, mustache]
 .request-fields.snippet with adjustment
 ----
-.{ {title} }
+.{{ '{{title}}' }}
 |===
 |Path|Type|Description|Constraints
 
-{ { #fields } }
-|{ {path} }
-|{ {type} }
-|{ {description} }
-|{ { #constraints } }{ {.} }{ { /constraints } } //<1>
+{{ '{{ #fields }}' }}
+|{{ '{{path}}' }}
+|{{ '{{type}}' }}
+|{{ '{{description}}' }}
+|{{ '{{ #constraints }}' }}{{ '{{.}}' }}{{ '{{ /constraints }}' }} //<1>
 
-{ { /fields } }
+{{ '{{ /fields }}' }}
 
 |===
 ----
