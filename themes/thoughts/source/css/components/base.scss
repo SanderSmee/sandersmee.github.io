@@ -1,0 +1,30 @@
+@mixin serif() {
+  font-family: $font-serif;
+}
+@mixin sans-serif() {
+  font-family: $font-sans-serif;
+}
+
+.serif {
+  @include serif();
+}
+
+.sans-serif {
+  @include sans-serif();
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
+
+pre.highlightjs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #1E1E1E;
+    color: #DCDCDC;
+}
+
+.listing-block pre {
+    font-size: 68.75%;
+}

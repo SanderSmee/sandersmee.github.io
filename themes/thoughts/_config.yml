@@ -1,0 +1,48 @@
+# Header
+menu:
+  About: /about
+  Archive: /archives
+  # Tags: /tags
+  # Categories: /categories
+  Github: https://github.com/SanderSmee/sandersmee.github.io
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title: thoughts.toString();
+
+# URL of the Home page image
+index_cover: //source.unsplash.com/dC6Pb2JdAqs
+
+# Default post title
+default_post_title: Untitled
+
+# Google Analytics Tracking ID
+google_analytics: UA-8287349-4
+
+# set your own favicon
+favicon:
+
+highlight:
+  enable: true
+
+# Social Accounts
+footer:
+  RSS:
+    link: /atom.xml
+    title: RSS
+    icon: fas fa-rss
+  twitter:
+    link: https://twitter.com/osusso
+    title: Twitter
+    icon: fab fa-twitter
+  github:
+    link: https://github.com/sandersmee/sandersmee.github.io
+    title: Github
+    icon: fab fa-github
+  mail:
+    link: mailto:sander.smeman@gmail.com
+    title: mail
+    icon: fas fa-envelope
+  linkedin:
+    link: https://www.linkedin.com/in/sandersmeman/
+    title: linkedin
+    icon: fab fa-linkedin

@@ -1,0 +1,17 @@
+extends partial/base
+
+include partial/post-preview
+include partial/pagination
+
+block header
+    include partial/index-header
+
+block content
+    main.container(role="main")
+        .row.justify-content-center
+            .col-lg-8.col-10
+                .posts-list
+                    - page.posts.each((post) => {
+                    +post_preview(post)
+                    - })
+                +pagination(page)

@@ -1,0 +1,20 @@
+.sidebarblock.series {
+    background-color: lighten($rgba-tertiary, 25%);
+    border-left: 5px solid $rgba-tertiary;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    .paragraph:last-child {
+      margin-bottom: -1rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 45%;
+      margin: $grid-gutter-width;
+
+      &.push-right {
+        margin-right: calc((8.33333% + 15px) * -1);
+        float: right;
+      }
+    }
+  }

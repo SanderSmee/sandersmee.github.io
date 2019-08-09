@@ -1,0 +1,9 @@
+mixin pagination(page)
+    nav(aria-label='Page navigation')
+        ul.pagination.justify-content-center
+            if page.prev
+                li.previous.page-item
+                    a.page-link(href=url_for(config.root + page.prev_link))!= '&larr; Previous page'
+            if page.next
+                li.next.page-item
+                    a.page-link(href=url_for(config.root + page.next_link))!= 'Next page &rarr;'

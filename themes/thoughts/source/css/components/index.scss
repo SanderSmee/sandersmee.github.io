@@ -1,0 +1,29 @@
+.posts-list {
+  .post-preview {
+    margin-bottom: 3rem;
+  }
+}
+
+a {
+    &.category {
+        background-color: var(--primary);
+        color: var(--dark);
+        padding: .2em .5em;
+        @include sans-serif();
+        margin-bottom: .5em;
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+}
+
+.post-header {
+    a {
+        color: $black;
+    }
+    .post-title {
+        margin-top: .5em;
+    }
+}
+.post-meta {
+    float: left;
+}

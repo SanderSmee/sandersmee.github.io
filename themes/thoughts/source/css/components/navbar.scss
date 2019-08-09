@@ -1,0 +1,19 @@
+.navbar-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  @include sans-serif();
+
+  a.navbar-brand {
+    color: #fff;
+    font-weight: 800;
+  }
+  .navbar-nav li a {
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}

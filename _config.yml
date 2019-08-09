@@ -4,7 +4,7 @@
 
 # Site
 icon_title: <i class="fas fa-brain"></i>.toString();
-title: thoughts.tostring();
+title: thoughts.toString();
 subtitle: My thoughts.toString(); For you to explore
 description:
 keywords: Blog, Java, Groovy, Asciidoctor, Architecture
@@ -16,7 +16,7 @@ timezone: Europe/Amsterdam
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://thoughts.tostring.blog
 root: /
-permalink: :year/:month/:title/
+permalink: :title/
 permalink_defaults:
 
 # Directory
@@ -66,6 +66,12 @@ tag_map:
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 
+
+# Category
+category:
+  header:
+    foo: 'none'
+
 # Pagination
 ## Set per_page to 0 to disable pagination
 per_page: 0
@@ -85,7 +91,7 @@ feed:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: tostring
+theme: thoughts
 
 marked:
   breaks: false
@@ -96,12 +102,21 @@ sitemap:
   category: false
 
 all_minifier: true
+html_minifier:
+  enable: false
+css_minifier:
+  enable: false
+js_minifier:
+  exclude:
+    - '*.min.js'
+    - '*.pack.js'
+    - '**/node_modules/**'
 
 # Post series
 post_series:
   list_title: 'All articles in series "@series@"'
   open_in_new_tab: false
-  reverse_sort: false
+  reverse_sort: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -109,3 +124,7 @@ deploy:
   type: git
   repo: git@github.com:sandersmee/sandersmee.github.io.git
   branch: master
+
+version:
+  css: 1
+  js: 1

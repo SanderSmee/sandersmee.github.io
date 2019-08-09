@@ -1,0 +1,24 @@
+extends partial/base
+
+include partial/post-preview
+
+block description
+    meta(name="description", content="All posts tagged with " + page.tag)
+    meta(name="keywords", content=page.tag)
+
+block site_title
+    = "Tag: " + page.tag + " | " + config.title
+
+block header
+    include partial/tag-header
+
+block content
+    main.container
+        .row.justify-content-center
+            .col-lg-8.col-12
+                .posts-list
+                    - page.posts.each((post) => {
+                        +post_preview(post)
+                    - })
+
+                include partial/pagination

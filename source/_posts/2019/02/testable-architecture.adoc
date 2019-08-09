@@ -1,12 +1,16 @@
 ---
 title: Testable architecture
 cover: //source.unsplash.com/92dgYPsir9k
+cover_credit:
+  url: //unsplash.com/photos/92dgYPsir9k
+  artist: Raphael Koh
 categories:
   - Architecture
 tags:
   - hexagonal
   - test
 date: 2019-02-07
+alias: 2019/02/testable-architecture/
 ---
 
 My coworker points me to the presentation of Aslak Hellesøy, https://www.youtube.com/watch?v=PE_1nh0DdbY[Sub-second acceptance tests].
@@ -24,7 +28,7 @@ Getting to fast acceptance tests has all to do with good software architecture p
 == Composing software
 Being able to exchange certain parts of your system can make that system easier to test.
 If the parts you can replace contain the bounds of the system, then those bounds can temporarily be put aside.
-The bounds we're referring to are the IO-bounds of a system, for example  a HTTP call to the system, or a connection the system has to a database.
+The bounds we're referring to are the IO-bounds of a system, for example a HTTP call to the system, or a connection the system has to a database.
 
 For parts of your system to be easy replaceable, they need well thought of interfaces or (API) contracts.
 This correspondents to the _Liskov substitution principle_ one of the https://en.wikipedia.org/wiki/SOLID[SOLID] principles.

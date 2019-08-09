@@ -1,0 +1,42 @@
+.header-section {
+  margin-bottom: 3rem;
+
+}
+.intro-header {
+  background-attachment: scroll;
+  background-color: grey;
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: multiply;
+
+  .site-heading, .post-heading, .page-heading {
+    padding: 150px 0 90px;
+    color: #fff;
+    text-align: left;
+
+    h1 {
+      font-weight: 800;
+    }
+    hr {
+      max-width: 120px;
+      margin: 1em auto;
+      border-color: #fff;
+      border-width: 4px;
+    }
+  }
+  .page-heading {
+      text-align: center;
+  }
+  .post-heading {
+      h1 {
+          font-size: 3.5rem;
+      }
+  }
+}
+
+.post-meta {
+    @include sans-serif();
+    li {
+        padding-right: 1.5em;
+    }
+}

@@ -1,0 +1,48 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible", content="IE=edge")
+meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+meta(name="author", content=config.author)
+meta(name="robots", content="all")
+
+title
+    block site_title
+       = page.title || config.title
+
+block description
+    meta(name="description", content=config.description)
+
+if page.tags !== undefined && page.tags.length > 0
+    meta(name="keywords", content=page.tags.map(function(tag){ return tag.name }).join(","))
+
+link(rel="dns-prefetch", href="//fonts.googleapis.com")
+link(rel="dns-prefetch", href="//stackpath.bootstrapcdn.com")
+link(rel="dns-prefetch", href="//use.fontawesome.com")
+link(rel="dns-prefetch", href="//cdnjs.cloudflare.com")
+
+script.
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+
+link(rel="alternate", type="application/rss+xml", title=config.title, href=url_for("/atom.xml"))
+
+link(rel="stylesheet", href="//use.fontawesome.com/releases/v5.6.3/css/all.css", integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/", crossorigin="anonymous")
+//- link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:800,800i&display=swap")
+//- experiment
+//- link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i|Roboto:400,900&display=swap")
+link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Encode+Sans:400,800|IBM+Plex+Serif:400,400i,700,700i&display=swap")
+
+link(rel="stylesheet", href=url_for("/css/style.css?v=" + config.version.css))
+link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css")
+
+block structured_data
+
+include google_analytics

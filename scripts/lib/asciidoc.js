@@ -1,10 +1,15 @@
 'use strict'
 
-const asciidoctor = require('asciidoctor.js')();
+const asciidoctor = require('asciidoctor')();
+const asciidoctorHtml5s = require('asciidoctor-html5s');
 // const path = require('path');
+
+// Register the HTML5s converter and supporting extension.
+asciidoctorHtml5s.register();
 
 const opts = {
     safe: 'safe',
+    backend: 'html5s',
     attributes: {
         doctype: 'article',
         showtitle: false,
@@ -18,12 +23,6 @@ const opts = {
 };
 
 function render(data, options) {
-    // if (data.path) {
-    //     const entry = path.parse(data.path);
-    //     const assetDir = path.join(entry.dir, entry.name);
-    //     opts.attributes.docdir = assetDir;
-    // }
-
     return asciidoctor.convert(data.text, opts);
 }
 

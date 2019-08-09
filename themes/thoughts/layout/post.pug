@@ -1,0 +1,45 @@
+extends partial/base
+
+include partial/post-meta
+include partial/pagination
+//- include partial/post-related
+
+block description
+    meta(name="description", content=truncate(strip_html(page.content), {length: 255}))
+
+block header
+    header.header-section
+        .intro-header(style='background-image: url(' + (page.cover || theme.index_cover) + ');')
+            .container
+                .row.justify-content-center
+                    .col-lg-10.col-12
+                        .post-heading
+                            if page.categories
+                                - page.categories.each((category) => {
+                                    a.category(href=url_for(category.path))=category.name
+                                - })
+                            h1= page.title
+                            if page.subtitle
+                                h2.post-subheading= page.subtitle
+                            +post_meta(page)
+
+block content
+    main.container
+        .row.justify-content-center
+            .col-lg-10.col-12
+                article(role="main", class="blog-post")
+                    != page.content
+
+                    //- include partial/post-footer
+
+                    //- +post_related(popular_posts_json({ maxCount: 3, isImage: true, isExcerpt: true }, page))
+
+                    != posts_in_same_series_list(page)
+
+                nav.pagination.justify-content-center(role="pagination")
+                    if page.prev
+                        li.next.page-item
+                            a.float-left.page-link(href=url_for(page.prev.path))!= '&larr; Next post'
+                    if page.next
+                        li.previous.page-item
+                            a.float-right.page-link(href=url_for(page.next.path))!= 'Previous post &rarr;'
