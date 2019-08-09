@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><meta name="author" content="Sander Smeman"><meta name="robots" content="all"><title>Reduce the code to noise ratio of maven POMs</title><meta name="description" content="I really like maven for the structured way it provides for defining and building a project.
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than ma..."><meta name="keywords" content="maven,yaml"><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com"><link rel="dns-prefetch" href="//use.fontawesome.com"><link rel="dns-prefetch" href="//cdnjs.cloudflare.com"><script>if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
+</script><link rel="alternate" type="application/rss+xml" title="thoughts.toString();" href="/atom.xml"><link rel="stylesheet" href="//use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Encode+Sans:400,800|IBM+Plex+Serif:400,400i,700,700i&amp;display=swap"><link rel="stylesheet" href="/css/style.css?v=1"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/vs2015.min.css"><script>if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-8287349-4', 'auto');
+    ga('send', 'pageview');
+}</script></head><body><nav class="navbar navbar-custom fixed-top navbar-expand-md"><a class="navbar-brand" href="/"><span>thoughts.toString();</span></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="/about">About</a></li><li class="nav-item"><a class="nav-link" href="/archives">Archive</a></li><li class="nav-item"><a class="nav-link" href="https://github.com/SanderSmee/sandersmee.github.io">Github</a></li></ul></div></nav><header class="header-section"><div class="intro-header" style="background-image: url(//source.unsplash.com/FO7JIlwjOtU);"><div class="container"><div class="row justify-content-center"><div class="col-lg-10 col-12"><div class="post-heading"><a class="category" href="/category/Programming/">Programming</a><h1>Reduce the code to noise ratio of maven POMs</h1><div class="post-meta"><ul class="list-inline"><li class="list-inline-item"><time datetime="2018-10-28T23:00:00.000Z" itemprop="datePublished">2018-10-28</time></li><li class="list-inline-item">2 minutes read</li></ul></div></div></div></div></div></div></header><main class="container"><div class="row justify-content-center"><div class="col-lg-10 col-12"><article class="blog-post" role="main"><p>I really like maven for the structured way it provides for defining and building a project.
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.</p>
+<a id="more"></a>
+<p>Looking for a less verbose way to declare a maven POM, I discovered <a href="https://github.com/takari/polyglot-maven" target="_blank" rel="noopener">polyglot maven</a>.
+It are maven extensions that allow the maven POM to be written in another dialect than XML.
+Since you see YAML more and more I decided to try that dialect, and see if my maven descriptor would be clearer.</p>
+<p>The minimum version of maven this works on, is maven 3.3.1. Since that version it&#8217;s possible to provide per project configuration. or extension of maven.</p>
+<div class="olist arabic"><ol class="arabic"><li>Create a directory to work in, <code>{projectdir}</code>, and change into it.</li><li><p>To register the extensions for maven, create a file <code>{projectdir}/.mvn/extensions.xml</code> and add the extension:</p><figure class="listing-block"><figcaption>Listing 1. extensions.xml</figcaption>
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;extensions&gt;
+    &lt;extension&gt;
+        &lt;groupId&gt;io.takari.polyglot&lt;/groupId&gt;
+        &lt;artifactId&gt;polyglot-yaml&lt;/artifactId&gt;
+        &lt;version&gt;0.3.1&lt;/version&gt;
+    &lt;/extension&gt;
+&lt;/extensions&gt;</code></pre></figure></li><li><p>Now it&#8217;s possible to write the maven POM in YAML, <code>pom.yml</code>:</p><figure class="listing-block"><figcaption>Listing 2. pom.yml</figcaption>
+<pre class="highlightjs highlight"><code class="language-yaml" data-lang="yaml">modelVersion: 4.0.0
+groupId: demo.maven.polyglot
+artifactId: yml-demo
+version: 1.0-SNAPSHOT
+name: 'YAML Demo'
+
+dependencies:
+- { groupId: org.junit.jupiter, artifactId: junit-jupiter, version: 5.3.1, scope: test }
+plugins:
+- artifactId: maven-compiler-plugin
+    version: 3.8.0
+    configuration:
+    source: 1.8
+    target: 1.8
+- artifactId: maven-surefire-plugin
+    version: 2.22.1</code></pre></figure>
+<p>By using the yaml inline map, or dictionary notation declaring a dependency uses way less characters then when using XML.</p></li></ol></div>
+<section class="doc-section level-1"><h2>Limitations</h2><p>Although this looks great, there are some limitations to using maven polyglot.
+Mixing different dialects is not possible, and plugins depending on the XML format will not work with another dialect.
+I also could not get a multi module project working with polyglot yaml.</p></section></article><nav class="pagination justify-content-center" role="pagination"><li class="next page-item"><a class="float-left page-link" href="/testable-architecture/">&larr; Next post</a></li><li class="previous page-item"><a class="float-right page-link" href="/easily-build-your-own-tech-radar/">Previous post &rarr;</a></li></nav></div></div></main><footer class="site-footer container-fluid"><div class="row justify-content-center"><div class="col-10"><div class="row"><section class="col-lg-4"><h5>thoughts.toString(); © 2019</h5><p><em>"My thoughts.toString(); For you to explore"</em></p><p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
+</p></section><section class="col-lg-4"><h5 class="marked">Recent articles</h5><div class="recent-posts"><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/custom-attributes-in-spring-restdocs/">Custom, optional attributes in spring-restdocs</a></li><li class="post-list-item"><a class="post-list-link" href="/testable-architecture/">Testable architecture</a></li><li class="post-list-item"><a class="post-list-link" href="/reduce-code-noise-ratio-maven-poms/">Reduce the code to noise ratio of maven POMs</a></li></ul></div></section><section class="col-lg-4"><h5 class="marked">Stay connected</h5><div class="social-links"><ul class="list-inline"><li class="list-inline-item"><a href="/atom.xml" title="RSS" onclick="window.open(this.href);return false;"><span class="fas fa-rss"></span></a></li><li class="list-inline-item"><a href="https://twitter.com/osusso" title="Twitter" onclick="window.open(this.href);return false;"><span class="fab fa-twitter"></span></a></li><li class="list-inline-item"><a href="https://github.com/sandersmee/sandersmee.github.io" title="Github" onclick="window.open(this.href);return false;"><span class="fab fa-github"></span></a></li><li class="list-inline-item"><a href="mailto:sander.smeman@gmail.com" title="mail" onclick="window.open(this.href);return false;"><span class="fas fa-envelope"></span></a></li><li class="list-inline-item"><a href="https://www.linkedin.com/in/sandersmeman/" title="linkedin" onclick="window.open(this.href);return false;"><span class="fab fa-linkedin"></span></a></li></ul></div></section></div></div></div></footer><script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><script src="/js/highlight.pack.js"></script><script>hljs.initHighlightingOnLoad();</script></body></html>

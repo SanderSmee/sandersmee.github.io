@@ -1,0 +1,1 @@
+window.addEventListener("unload",function(){});

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>thoughts.tostring();</title>
+  <title>thoughts.toString();</title>
   
   <subtitle>My thoughts.toString(); For you to explore</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2019-08-09T07:48:06.124Z</updated>
+  <updated>2019-08-09T08:41:07.784Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -18,14 +18,16 @@
   
   <entry>
     <title>Custom, optional attributes in spring-restdocs</title>
-    <link href="http://thoughts.tostring.blog/2019/03/custom-attributes-in-spring-restdocs/"/>
-    <id>http://thoughts.tostring.blog/2019/03/custom-attributes-in-spring-restdocs/</id>
+    <link href="http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/"/>
+    <id>http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/</id>
     <published>2019-03-20T16:09:20.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;Documenting spring restcontrollers with spring-restdocs is a sure way to get great documentation. It allows one to document API endpoints based on examples used in a test, and document specific fields in a response. It&amp;#8217;s even possible to document additional attributes of a field in a JSON response.&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;Documenting spring restcontrollers with spring-restdocs is a sure way to get great documentation.
+It allows one to document API endpoints based on examples used in a test, and document specific fields in a response.
+It&amp;#8217;s even possible to document additional attributes of a field in a JSON response.&lt;/p&gt;
     
     </summary>
     
@@ -42,14 +44,15 @@
   
   <entry>
     <title>Testable architecture</title>
-    <link href="http://thoughts.tostring.blog/2019/02/testable-architecture/"/>
-    <id>http://thoughts.tostring.blog/2019/02/testable-architecture/</id>
+    <link href="http://thoughts.tostring.blog/testable-architecture/"/>
+    <id>http://thoughts.tostring.blog/testable-architecture/</id>
     <published>2019-02-06T23:00:00.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;My coworker points me to the presentation of Aslak Hellesøy, &lt;a href=&quot;https://www.youtube.com/watch?v=PE_1nh0DdbY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sub-second acceptance tests&lt;/a&gt;. As we&amp;#8217;re struggling with long running and brittle acceptance tests, that provoking title triggers my interest, and I start watching the recording&amp;#8230;&amp;#8203;&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;My coworker points me to the presentation of Aslak Hellesøy, &lt;a href=&quot;https://www.youtube.com/watch?v=PE_1nh0DdbY&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sub-second acceptance tests&lt;/a&gt;.
+As we&amp;#8217;re struggling with long running and brittle acceptance tests, that provoking title triggers my interest, and I start watching the recording&amp;#8230;&amp;#8203;&lt;/p&gt;
     
     </summary>
     
@@ -64,14 +67,16 @@
   
   <entry>
     <title>Reduce the code to noise ratio of maven POMs</title>
-    <link href="http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/"/>
-    <id>http://thoughts.tostring.blog/2018/10/reduce-code-noise-ratio-maven-poms/</id>
+    <link href="http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/"/>
+    <id>http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;I really like maven for the structured way it provides for defining and building a project. But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM). For example, gradles dependency notation is far shorter than mavens dependency declaration.&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;I really like maven for the structured way it provides for defining and building a project.
+But sometimes I wish for a less verbose notation than the XML of the Project Object Model (POM).
+For example, gradles dependency notation is far shorter than mavens dependency declaration.&lt;/p&gt;
     
     </summary>
     
@@ -86,14 +91,16 @@
   
   <entry>
     <title>Easily build your own tech radar</title>
-    <link href="http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/"/>
-    <id>http://thoughts.tostring.blog/2018/10/easily-build-your-own-tech-radar/</id>
+    <link href="http://thoughts.tostring.blog/easily-build-your-own-tech-radar/"/>
+    <id>http://thoughts.tostring.blog/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices. For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option. Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices.
+For my project I wanted to have the same thing, not use the hosted public version from Thoughtworks, but a selfhosted option.
+Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;
     
     </summary>
     
@@ -106,14 +113,16 @@
   
   <entry>
     <title>Plantuml labels like swagger-ui</title>
-    <link href="http://thoughts.tostring.blog/2018/09/plantuml-swagger/"/>
-    <id>http://thoughts.tostring.blog/2018/09/plantuml-swagger/</id>
+    <link href="http://thoughts.tostring.blog/plantuml-swagger/"/>
+    <id>http://thoughts.tostring.blog/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;It&amp;#8217;s great to have &lt;a href=&quot;../asciidoc-swagger&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further? In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices. Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;It&amp;#8217;s great to have &lt;a href=&quot;../asciidoc-swagger&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further?
+In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Plantuml&lt;/a&gt; diagrams, e.g. to illustrate the sequence of interaction between microservices.
+Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;
     
     </summary>
     
@@ -130,14 +139,16 @@
   
   <entry>
     <title>Asciidoc labels like swagger-ui</title>
-    <link href="http://thoughts.tostring.blog/2018/09/asciidoc-swagger/"/>
-    <id>http://thoughts.tostring.blog/2018/09/asciidoc-swagger/</id>
+    <link href="http://thoughts.tostring.blog/asciidoc-swagger/"/>
+    <id>http://thoughts.tostring.blog/asciidoc-swagger/</id>
     <published>2018-09-13T22:00:00.000Z</published>
-    <updated>2019-08-09T07:48:06.124Z</updated>
+    <updated>2019-08-09T08:41:07.784Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;If you&amp;#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring REST Docs&lt;/a&gt;. Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc. And what&amp;#8217;s best is that you can simply combine the two in a project.&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;If you&amp;#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring REST Docs&lt;/a&gt;.
+Springfox creates (interactive) documentation through a swagger-ui to use by a developer, Spring REST Docs creates documentation via asciidoc.
+And what&amp;#8217;s best is that you can simply combine the two in a project.&lt;/p&gt;
     
     </summary>
     
@@ -152,14 +163,15 @@
   
   <entry>
     <title>Combining Spock 1.2 and Junit 5 tests</title>
-    <link href="http://thoughts.tostring.blog/2018/09/spock-jupiter/"/>
-    <id>http://thoughts.tostring.blog/2018/09/spock-jupiter/</id>
+    <link href="http://thoughts.tostring.blog/spock-jupiter/"/>
+    <id>http://thoughts.tostring.blog/spock-jupiter/</id>
     <published>2018-09-05T22:00:00.000Z</published>
     <updated>2018-09-30T22:00:00.000Z</updated>
     
     <summary type="html">
     
-      &lt;div class=&quot;paragraph&quot;&gt;&lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018. Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;&lt;/div&gt;
+      &lt;p&gt;Great projects keep moving forward. &lt;a href=&quot;https://junit.org/junit5/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;JUnit5&lt;/a&gt; is available since september 2017 and &lt;a href=&quot;http://spockframework.org&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spock&lt;/a&gt; 1.2 was completed in september 2018.
+Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
     
     </summary>
     
