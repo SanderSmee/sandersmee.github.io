@@ -1,7 +1,7 @@
 ---
 title: 'The thoughts belong to ...'
 layout: page
-cover: //source.unsplash.com/HFG53IIJ8y0 # TL5Vy1IM-uA
+cover: //source.unsplash.com/TL5Vy1IM-uA
 permalink: /about/
 ---
 

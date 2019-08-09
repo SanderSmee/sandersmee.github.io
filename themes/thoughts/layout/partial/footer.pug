@@ -13,7 +13,7 @@ footer.site-footer.container-fluid
                 section.col-lg-4
                     h5.marked!="Recent articles"
                     .recent-posts
-                        != list_posts({limit: 5})
+                        != list_posts({amount: 3})
 
                 section.col-lg-4
                     h5.marked!="Stay connected"
@@ -24,10 +24,9 @@ footer.site-footer.container-fluid
                                     a(href=value.link, title=value.title, onclick="window.open(this.href);return false;")
                                         span(class=value.icon)
 
-                    h5.marked!="Most popular tags"
-
-                    div.tagcloud
-                        != tagcloud(site.tags.sort('length', 'desc').limit(25), { unit: 'pt', min_font: 8, max_font: 32, start_color: '#6a6a6a', end_color: '#bababa', color: true })
+                    //- h5.marked!="Most popular tags"
+                    //- div.tagcloud
+                    //-     != tagcloud(site.tags.sort('length', 'desc').limit(25), { unit: 'pt', min_font: 8, max_font: 32, start_color: '#6a6a6a', end_color: '#bababa', color: true })
 
     //- section.poweredby.text-center.text-muted
     //-     ul.list-inline
