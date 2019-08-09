@@ -5,8 +5,3 @@
 
 # sandersmee.github.io
 Source of my blog [https://thoughts.tostring.blog](https://thoughts.tostring.blog).
-
-
-Fonts:
-
-Noto Sans + Noto Serif + Roboto Mono
