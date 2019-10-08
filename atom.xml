@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2019-08-09T08:42:18.018Z</updated>
+  <updated>2019-10-08T18:53:56.144Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/"/>
     <id>http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/</id>
     <published>2019-03-20T16:09:20.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -30,6 +30,7 @@ It allows one to document API endpoints based on examples used in a test, and do
 It&amp;#8217;s even possible to document additional attributes of a field in a JSON response.&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Howto" scheme="http://thoughts.tostring.blog/category/Howto/"/>
     
@@ -47,7 +48,7 @@ It&amp;#8217;s even possible to document additional attributes of a field in a J
     <link href="http://thoughts.tostring.blog/testable-architecture/"/>
     <id>http://thoughts.tostring.blog/testable-architecture/</id>
     <published>2019-02-06T23:00:00.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -55,6 +56,7 @@ It&amp;#8217;s even possible to document additional attributes of a field in a J
 As we&amp;#8217;re struggling with long running and brittle acceptance tests, that provoking title triggers my interest, and I start watching the recording&amp;#8230;&amp;#8203;&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Architecture" scheme="http://thoughts.tostring.blog/category/Architecture/"/>
     
@@ -70,7 +72,7 @@ As we&amp;#8217;re struggling with long running and brittle acceptance tests, th
     <link href="http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/"/>
     <id>http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -79,6 +81,7 @@ But sometimes I wish for a less verbose notation than the XML of the Project Obj
 For example, gradles dependency notation is far shorter than mavens dependency declaration.&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Programming" scheme="http://thoughts.tostring.blog/category/Programming/"/>
     
@@ -94,7 +97,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     <link href="http://thoughts.tostring.blog/easily-build-your-own-tech-radar/"/>
     <id>http://thoughts.tostring.blog/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -103,6 +106,7 @@ For my project I wanted to have the same thing, not use the hosted public versio
 Therefore I choose to base it on the Zalando opensource tech radar, and create a way to use a CSV file as input so updating would be an easy thing to do.&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
@@ -116,7 +120,7 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     <link href="http://thoughts.tostring.blog/plantuml-swagger/"/>
     <id>http://thoughts.tostring.blog/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -125,6 +129,7 @@ In asciidoc documentation I also use &lt;a href=&quot;http://plantuml.com/&quot;
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
@@ -142,7 +147,7 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     <link href="http://thoughts.tostring.blog/asciidoc-swagger/"/>
     <id>http://thoughts.tostring.blog/asciidoc-swagger/</id>
     <published>2018-09-13T22:00:00.000Z</published>
-    <updated>2019-08-09T08:42:18.018Z</updated>
+    <updated>2019-10-08T18:53:56.144Z</updated>
     
     <summary type="html">
     
@@ -151,6 +156,7 @@ Springfox creates (interactive) documentation through a swagger-ui to use by a d
 And what&amp;#8217;s best is that you can simply combine the two in a project.&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Documentation" scheme="http://thoughts.tostring.blog/category/Documentation/"/>
     
@@ -174,6 +180,7 @@ And what&amp;#8217;s best is that you can simply combine the two in a project.&l
 Since Spock is based on junit4, I wondered what it would take to use Spock 1.2 together with JUnit5.&lt;/p&gt;
     
     </summary>
+    
     
       <category term="Programming" scheme="http://thoughts.tostring.blog/category/Programming/"/>
     
