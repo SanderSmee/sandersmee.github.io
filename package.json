@@ -4,7 +4,7 @@
   "description": "Personal website",
   "private": true,
   "hexo": {
-    "version": "3.9.0"
+    "version": "4.0.0"
   },
   "scripts": {
     "hexo": "hexo",
@@ -16,7 +16,7 @@
   "dependencies": {
     "asciidoctor": "^2.0.3",
     "asciidoctor-html5s": "^0.2.0",
-    "hexo": "~3.9.0",
+    "hexo": "~4.0.0",
     "hexo-all-minifier": "~0.5.3",
     "hexo-auto-canonical": "~0.1.1",
     "hexo-deployer-git": "~2.0.0",
@@ -29,10 +29,10 @@
     "hexo-generator-seo-friendly-sitemap": "~0.0.22",
     "hexo-generator-tag": "~1.0.0",
     "hexo-reading-time": "~1.0.3",
-    "hexo-render-pug": "^2.1.4",
     "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-sass": "^0.4.0",
-    "hexo-util": "~1.4.0",
+    "hexo-util": "~1.5.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
