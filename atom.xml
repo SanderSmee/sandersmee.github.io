@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2019-10-08T18:53:56.144Z</updated>
+  <updated>2019-11-07T10:07:08.555Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/"/>
     <id>http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/</id>
     <published>2019-03-20T16:09:20.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
@@ -48,7 +48,7 @@ It&amp;#8217;s even possible to document additional attributes of a field in a J
     <link href="http://thoughts.tostring.blog/testable-architecture/"/>
     <id>http://thoughts.tostring.blog/testable-architecture/</id>
     <published>2019-02-06T23:00:00.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
@@ -72,7 +72,7 @@ As we&amp;#8217;re struggling with long running and brittle acceptance tests, th
     <link href="http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/"/>
     <id>http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
@@ -97,7 +97,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     <link href="http://thoughts.tostring.blog/easily-build-your-own-tech-radar/"/>
     <id>http://thoughts.tostring.blog/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
@@ -120,7 +120,7 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     <link href="http://thoughts.tostring.blog/plantuml-swagger/"/>
     <id>http://thoughts.tostring.blog/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
@@ -147,7 +147,7 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     <link href="http://thoughts.tostring.blog/asciidoc-swagger/"/>
     <id>http://thoughts.tostring.blog/asciidoc-swagger/</id>
     <published>2018-09-13T22:00:00.000Z</published>
-    <updated>2019-10-08T18:53:56.144Z</updated>
+    <updated>2019-11-07T10:07:08.555Z</updated>
     
     <summary type="html">
     
