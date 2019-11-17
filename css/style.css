@@ -4857,5 +4857,16 @@ a.category {
 .post-header .post-title {
   margin-top: .5em; }
 
-.post-meta {
-  float: left; }
+article.blog-post > * {
+  margin-bottom: 1.5rem; }
+
+.post-tags {
+  margin: 2rem 0;
+  text-align: center; }
+  .post-tags .badge {
+    margin-right: .5rem;
+    padding: .7rem;
+    font-weight: 600; }
+
+nav.pagination li:first-child {
+  margin-right: auto; }

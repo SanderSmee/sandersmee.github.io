@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>http://thoughts.tostring.blog/asciidoc-swagger/</loc>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://thoughts.tostring.blog/plantuml-swagger/</loc>
-        <lastmod>2019-11-08T13:14:10.351Z</lastmod>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +25,7 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/easily-build-your-own-tech-radar/</loc>
-        <lastmod>2019-11-08T13:14:10.351Z</lastmod>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +33,7 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/</loc>
-        <lastmod>2019-11-08T13:14:10.351Z</lastmod>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +41,7 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/testable-architecture/</loc>
-        <lastmod>2019-11-08T13:14:10.351Z</lastmod>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -41,15 +49,7 @@
 
     <url>
         <loc>http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/</loc>
-        <lastmod>2019-11-08T13:14:10.351Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://thoughts.tostring.blog/asciidoc-swagger/</loc>
-        <lastmod>2019-11-08T13:14:10.347Z</lastmod>
+        <lastmod>2019-11-17T10:43:19.285Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
