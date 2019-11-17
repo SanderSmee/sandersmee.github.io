@@ -10,6 +10,18 @@ My name is Sander Smeman.
 I'm a Developer and Software Architect passionate about building modular, scalable software, using services, microservices and cloud technologies.
 I have over 10 years of experience in software development and API design, using techniques and technologies like agile, XP, DDD, TDD, hexagonal architecture, microservices, devops, docs-as-code, CQRS and event-sourcing.
 
+== Principles and Values
+=== Programming principles:
+* Single Responsability Principle
+* Don’t Repeat Yourself
+* Keep it Short & Simple: Overengineering is the root of all evil
+* Protect the Developers: Invisible Magic to reduce effort and risk
+* Simple Design:
+.. Passes the Tests
+.. Reveals Intentation
+.. No Duplication
+.. Fewest Elements
+
 == Employment
 I work at the wonderful company https://jdriven.com[JDriven].
 There I have ~35 collegues passionate about creating software, craftmanship and software architecture.

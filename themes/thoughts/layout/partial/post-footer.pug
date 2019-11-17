@@ -1,4 +1,5 @@
 section.post-tags
-    - page.tags.each((tag) => {
-    a.tag.post-meta(href=url_for(tag.path))="#"+tag.name
-    - })
+    div
+        - page.tags.each((tag) => {
+        a.tag.post-meta.badge.badge-pill.badge-primary(href=url_for(tag.path))="#"+tag.name
+        - })
