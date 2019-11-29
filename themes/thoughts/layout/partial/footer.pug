@@ -24,6 +24,13 @@ footer.site-footer.container-fluid
                                     a(href=value.link, title=value.title, onclick="window.open(this.href);return false;")
                                         span(class=value.icon)
 
+                    h5.marked!="Meta"
+                    ul.list-inline
+                        li.list-inline-item
+                            a(href="/statistics") Statistics
+                        li.list-inline-item
+                            a(href="https://status.tostring.blog") Uptime
+
                     //- h5.marked!="Most popular tags"
                     //- div.tagcloud
                     //-     != tagcloud(site.tags.sort('length', 'desc').limit(25), { unit: 'pt', min_font: 8, max_font: 32, start_color: '#6a6a6a', end_color: '#bababa', color: true })
