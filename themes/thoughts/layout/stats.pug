@@ -1,0 +1,81 @@
+extends partial/base
+
+block description
+    meta(name="description", content=page.title)
+
+block site_title
+    = page.title
+
+block header
+    header.header-section
+        .intro-header(style='background-image: url(' + (page.cover || theme.index_cover) + ');')
+            .container
+                .row.justify-content-center
+                    .col-12.col-lg-8
+                        h1.page-heading!= page.title
+            span.img-desc
+
+block content
+    main.container
+        .row.justify-content-center
+            .col-lg-8.col-12
+                .posts-count
+                    h3 Total posts
+                    p= site.posts.length
+
+                .categories-count
+                    h3 Total categories
+                    p= site.categories.length
+
+                .tags-count
+                    h3 Total tags
+                    p= site.tags.length
+
+                .total-reading-time
+                    h3 Total reading time for all posts
+                    -
+                        var count = 0
+                        site.posts.each((post) => {
+                            count += parseInt(readingTime(post.content, ' ', 150).trim())
+                        })
+                    p= count + ' minutes'
+
+                .posts-first
+                    h3 First post
+                    p
+                        - var post = site.posts.data[0]
+                        a(href=url_for(post.path))=post.title
+                        |
+                        | on
+                        |
+                        time(datetime=date_xml(post.date), itemprop="datePublished")!= post.date.format(config.date_format)
+
+                .posts-last
+                    h3 Last post
+                    p
+                        - var post = site.posts.data[site.posts.length - 1]
+                        a(href=url_for(post.path))=post.title
+                        |
+                        | on
+                        |
+                        time(datetime=date_xml(post.date), itemprop="datePublished")!= post.date.format(config.date_format)
+
+                .posts-per-category
+                    h3 Posts per category
+                    ul
+                        - site.categories.each((category) => {
+                            li
+                                a(href=url_for(category.path))=category.name
+                                    | &nbsp;
+                                    sup.badge.badge-primary= category.posts.length
+                        - })
+
+                .posts-per-tag
+                    h3 Posts per tag
+                    ul
+                        - site.tags.each((tag) => {
+                            li
+                                a(href=url_for(tag.path))=tag.name
+                                    | &nbsp;
+                                    sup.badge.badge-primary= tag.posts.length
+                        - })

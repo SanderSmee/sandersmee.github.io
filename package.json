@@ -7,7 +7,6 @@
     "version": "4.0.0"
   },
   "scripts": {
-    "hexo": "hexo",
     "postinstall": "cd themes/thoughts && npm install",
     "start": "hexo server --draft --config _config.yml",
     "clean": "hexo clean",
@@ -24,7 +23,7 @@
     "hexo-generator-archive": "~1.0.0",
     "hexo-generator-category": "~1.0.0",
     "hexo-generator-cname": "~0.3.0",
-    "hexo-generator-feed": "~2.0.0",
+    "hexo-generator-feed": "~2.2.0",
     "hexo-generator-index": "~1.0.0",
     "hexo-generator-seo-friendly-sitemap": "~0.0.22",
     "hexo-generator-tag": "~1.0.0",
