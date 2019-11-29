@@ -10,10 +10,9 @@ date: 2018-09-16
 alias: 2018/09/plantuml-swagger/
 ---
 :1: http://plantuml.com/
-:2: ../asciidoc-swagger
 :img: /images/plantuml-httplabels.png
 
-It's great to have link:{2}[Asciidoc labels like swagger-ui] in the documentation, but would it be possible to extend this even further?
+It's great to have link:pass:[{% post_path asciidoc-swagger %}][Asciidoc labels like swagger-ui] in the documentation, but would it be possible to extend this even further?
 In asciidoc documentation I also use link:{1}[Plantuml] diagrams, e.g. to illustrate the sequence of interaction between microservices.
 Is it possible to label those interactions like swagger-ui, just as I now can in asciidoc?
 
