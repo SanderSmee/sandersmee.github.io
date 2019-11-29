@@ -12,7 +12,10 @@ block header
             .container
                 .row.justify-content-center
                     .col-12.col-lg-8
-                        h1.page-heading!= page.title
+                        .page-heading
+                            h1!= page.title
+                            hr.small
+                            span.page-subheading!="Facts you had not thought of"
             span.img-desc
 
 block content
@@ -62,9 +65,9 @@ block content
 
                 .posts-per-category
                     h3 Posts per category
-                    ul
+                    ul.list-inline
                         - site.categories.each((category) => {
-                            li
+                            li.list-inline-item.mr-3
                                 a(href=url_for(category.path))=category.name
                                     | &nbsp;
                                     sup.badge.badge-primary= category.posts.length
@@ -72,9 +75,9 @@ block content
 
                 .posts-per-tag
                     h3 Posts per tag
-                    ul
+                    ul.list-inline
                         - site.tags.each((tag) => {
-                            li
+                            li.list-inline-item.mr-3
                                 a(href=url_for(tag.path))=tag.name
                                     | &nbsp;
                                     sup.badge.badge-primary= tag.posts.length

@@ -2,4 +2,5 @@
 title: Statistics
 layout: "stats"
 permalink: /statistics/
+cover: "//source.unsplash.com/N1I6IgDOGJs"
 ---
