@@ -12,4 +12,4 @@ find . -path ./.git -prune -o -exec rm -rf {} \; 2> /dev/null
 cd ../
 
 # Run deployment
-hexo deploy
+npx hexo deploy

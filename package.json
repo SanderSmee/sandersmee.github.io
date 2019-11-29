@@ -31,7 +31,7 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-sass": "^0.4.0",
-    "hexo-util": "~1.6.1",
+    "hexo-util": "~1.5.0",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
