@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-- '8.15.0'
+- '10.17.0'
 
 cache:
   directories:
@@ -12,8 +12,6 @@ branches:
   - source
 
 before_install:
-- npm install hexo-cli -g
-- npm install hexo --save
 - npm install
 
 before_script:
@@ -22,7 +20,7 @@ before_script:
 - sed -i'' "s~git@github.com:sandersmee/sandersmee.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/sandersmee/sandersmee.github.io.git~" _config.yml
 
 script:
-- hexo generate
+- npx hexo generate
 
 deploy:
   skip_cleanup: true
