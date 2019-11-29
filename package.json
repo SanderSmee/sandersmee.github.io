@@ -7,7 +7,6 @@
     "version": "4.0.0"
   },
   "scripts": {
-    "hexo": "hexo",
     "postinstall": "cd themes/thoughts && npm install",
     "start": "hexo server --draft --config _config.yml",
     "clean": "hexo clean",
