@@ -77,6 +77,8 @@ category:
 per_page: 0
 pagination_dir: page
 
+meta_generator: false
+
 # Feed
 feed:
   type: atom
