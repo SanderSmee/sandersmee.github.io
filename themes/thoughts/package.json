@@ -3,10 +3,10 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "bootstrap": "^4.4.1",
+        "bootstrap": "^4.5.2",
         "hexo-pagination": "^1.0.0",
-        "hexo-util": "~1.6.1",
-        "moment": "^2.24.0",
+        "hexo-util": "~2.4.0",
+        "moment": "^2.27.0",
         "object-assign": "^4.1.1"
     }
 }
