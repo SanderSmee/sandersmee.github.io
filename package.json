@@ -4,7 +4,7 @@
   "description": "Personal website",
   "private": true,
   "hexo": {
-    "version": "4.2.0"
+    "version": "5.2.0"
   },
   "scripts": {
     "postinstall": "cd themes/thoughts && npm install",
@@ -13,30 +13,30 @@
     "build": "npm install && hexo generate"
   },
   "dependencies": {
-    "asciidoctor": "^2.0.3",
-    "asciidoctor-html5s": "^0.2.0",
-    "hexo": "~4.2.0",
-    "hexo-all-minifier": "~0.5.3",
+    "asciidoctor": "~2.2.0",
+    "asciidoctor-html5s": "^0.5.0",
+    "hexo": "~5.2.0",
+    "hexo-all-minifier": "~0.5.5",
     "hexo-auto-canonical": "~0.1.1",
     "hexo-deployer-git": "~2.1.0",
-    "hexo-generator-alias": "^0.1.3",
+    "hexo-generator-alias": "^1.0.0",
     "hexo-generator-archive": "~1.0.0",
     "hexo-generator-category": "~1.0.0",
     "hexo-generator-cname": "~0.3.0",
-    "hexo-generator-feed": "~2.2.0",
-    "hexo-generator-index": "~1.0.0",
-    "hexo-generator-seo-friendly-sitemap": "~0.0.22",
+    "hexo-generator-feed": "~3.0.0",
+    "hexo-generator-index": "~2.0.0",
+    "hexo-generator-seo-friendly-sitemap": "~0.1.1",
     "hexo-generator-tag": "~1.0.0",
     "hexo-reading-time": "~1.0.3",
-    "hexo-renderer-marked": "^2.0.0",
+    "hexo-renderer-marked": "^3.3.0",
     "hexo-renderer-pug": "^1.0.0",
     "hexo-renderer-sass": "^0.4.0",
-    "hexo-util": "~1.8.1",
-    "lodash": "^4.17.19"
+    "hexo-util": "~2.4.0",
+    "lodash": "^4.17.20"
   },
   "devDependencies": {
     "hexo-browsersync": "^0.3.0",
-    "hexo-server": "^1.0.0"
+    "hexo-server": "^2.0.0"
   },
   "repository": {
     "type": "git",
