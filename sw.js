@@ -1,1 +1,1 @@
-self.addEventListener("fetch",e=>{e.respondWith(handleRequest(e))});async function handleRequest(e){return await fetch(e.request)}
+async function handleRequest(e){return await fetch(e.request)}self.addEventListener("fetch",e=>{e.respondWith(handleRequest(e))});

@@ -6,7 +6,7 @@
   <link href="http://thoughts.tostring.blog/atom.xml" rel="self"/>
   
   <link href="http://thoughts.tostring.blog/"/>
-  <updated>2021-05-10T19:19:08.467Z</updated>
+  <updated>2022-02-13T16:33:59.908Z</updated>
   <id>http://thoughts.tostring.blog/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Override asciidoctor gradle plugin versions</title>
+    <link href="http://thoughts.tostring.blog/override-asciidoctor-gradle-versions/"/>
+    <id>http://thoughts.tostring.blog/override-asciidoctor-gradle-versions/</id>
+    <published>2022-02-13T19:00:00.000Z</published>
+    <updated>2022-02-13T16:33:59.908Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;As development team we decided to write our documentation with Asciidoc.
+As other parts in our landscape use gradle as the build tool, thus we opted for the asciidoctor-gradle-plugin to generate the documentation.
+The documents have embedded plantuml diagrams describing the architecture, but to our surprise the toolchain did not render them correctly.
+Apparently the diagrams use features of plantuml that are not supported in the version provided by default by the toolchain.&lt;/p&gt;
+&lt;p&gt;We found out we had to update to later versions of asciidoctorj-diagram and plantuml.
+The version of asciidoctor-gradle-plugin (3.3.2) is now about a year old (from February 2021) and probably its dependencies also.
+Unfortunately it&amp;#8217;s rather hard to find which versions are used by the asciidoctor-gradle plugin and how to update to newer versions.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Howto" scheme="http://thoughts.tostring.blog/category/Howto/"/>
+    
+    
+    <category term="documentation" scheme="http://thoughts.tostring.blog/tags/documentation/"/>
+    
+    <category term="plantuml" scheme="http://thoughts.tostring.blog/tags/plantuml/"/>
+    
+    <category term="gradle" scheme="http://thoughts.tostring.blog/tags/gradle/"/>
+    
+    <category term="asciidoctor" scheme="http://thoughts.tostring.blog/tags/asciidoctor/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Custom, optional attributes in spring-restdocs</title>
     <link href="http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/"/>
     <id>http://thoughts.tostring.blog/custom-attributes-in-spring-restdocs/</id>
     <published>2019-03-20T16:09:20.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.225Z</updated>
     
     
     <summary type="html">&lt;p&gt;Documenting spring restcontrollers with spring-restdocs is a sure way to get great documentation.
@@ -33,11 +64,11 @@ It&amp;#8217;s even possible to document additional attributes of a field in a J
     <category term="Howto" scheme="http://thoughts.tostring.blog/category/Howto/"/>
     
     
-    <category term="asciidoc" scheme="http://thoughts.tostring.blog/tags/asciidoc/"/>
-    
     <category term="documentation" scheme="http://thoughts.tostring.blog/tags/documentation/"/>
     
     <category term="spring-restdocs" scheme="http://thoughts.tostring.blog/tags/spring-restdocs/"/>
+    
+    <category term="asciidoc" scheme="http://thoughts.tostring.blog/tags/asciidoc/"/>
     
   </entry>
   
@@ -46,7 +77,7 @@ It&amp;#8217;s even possible to document additional attributes of a field in a J
     <link href="http://thoughts.tostring.blog/testable-architecture/"/>
     <id>http://thoughts.tostring.blog/testable-architecture/</id>
     <published>2019-02-06T23:00:00.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.224Z</updated>
     
     
     <summary type="html">&lt;p&gt;My coworker points me to the presentation of Aslak Hellesøy, &lt;a href=&quot;https://www.youtube.com/watch?v=PE_1nh0DdbY&quot;&gt;Sub-second acceptance tests&lt;/a&gt;.
@@ -68,7 +99,7 @@ As we&amp;#8217;re struggling with long running and brittle acceptance tests, th
     <link href="http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/"/>
     <id>http://thoughts.tostring.blog/reduce-code-noise-ratio-maven-poms/</id>
     <published>2018-10-28T23:00:00.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.223Z</updated>
     
     
     <summary type="html">&lt;p&gt;I really like maven for the structured way it provides for defining and building a project.
@@ -91,7 +122,7 @@ For example, gradles dependency notation is far shorter than mavens dependency d
     <link href="http://thoughts.tostring.blog/easily-build-your-own-tech-radar/"/>
     <id>http://thoughts.tostring.blog/easily-build-your-own-tech-radar/</id>
     <published>2018-10-14T22:00:00.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.223Z</updated>
     
     
     <summary type="html">&lt;p&gt;The &lt;a href=&quot;https://www.thoughtworks.com/radar&quot;&gt;Thoughtworks Technology Radar&lt;/a&gt; is well known for showing technology trends and choices.
@@ -112,7 +143,7 @@ Therefore I choose to base it on the Zalando opensource tech radar, and create a
     <link href="http://thoughts.tostring.blog/plantuml-swagger/"/>
     <id>http://thoughts.tostring.blog/plantuml-swagger/</id>
     <published>2018-09-15T22:00:00.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.222Z</updated>
     
     
     <summary type="html">&lt;p&gt;It&amp;#8217;s great to have &lt;a href=&quot;/asciidoc-swagger/&quot;&gt;Asciidoc labels like swagger-ui&lt;/a&gt; in the documentation, but would it be possible to extend this even further?
@@ -126,9 +157,9 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     
     <category term="asciidoc" scheme="http://thoughts.tostring.blog/tags/asciidoc/"/>
     
-    <category term="swagger-ui" scheme="http://thoughts.tostring.blog/tags/swagger-ui/"/>
-    
     <category term="plantuml" scheme="http://thoughts.tostring.blog/tags/plantuml/"/>
+    
+    <category term="swagger-ui" scheme="http://thoughts.tostring.blog/tags/swagger-ui/"/>
     
   </entry>
   
@@ -137,7 +168,7 @@ Is it possible to label those interactions like swagger-ui, just as I now can in
     <link href="http://thoughts.tostring.blog/asciidoc-swagger/"/>
     <id>http://thoughts.tostring.blog/asciidoc-swagger/</id>
     <published>2018-09-13T22:00:00.000Z</published>
-    <updated>2021-05-10T19:19:08.467Z</updated>
+    <updated>2020-09-01T20:36:49.222Z</updated>
     
     
     <summary type="html">&lt;p&gt;If you&amp;#8217;re building a rest api with spring-boot and want to document the api, you have two good options to do this; &lt;a href=&quot;http://springfox.github.io/springfox/&quot;&gt;Springfox&lt;/a&gt;, or &lt;a href=&quot;https://spring.io/projects/spring-restdocs&quot;&gt;Spring REST Docs&lt;/a&gt;.
