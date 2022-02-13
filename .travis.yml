@@ -1,26 +1,26 @@
 language: node_js
 
 node_js:
-- '12.18.4'
+  - "16.13.2"
 
 cache:
   directories:
-  - node_modules
+    - node_modules
 
 branches:
   only:
-  - source
+    - source
 
 before_install:
-- npm install
+  - npm install
 
 before_script:
-- git config --global user.name 'Travis CI'
-- git config --global user.email 'hexo@travis-ci.org'
-- sed -i'' "s~git@github.com:sandersmee/sandersmee.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/sandersmee/sandersmee.github.io.git~" _config.yml
+  - git config --global user.name 'Travis CI'
+  - git config --global user.email 'hexo@travis-ci.org'
+  - sed -i'' "s~git@github.com:sandersmee/sandersmee.github.io.git~https://${GH_TOKEN}:x-oauth-basic@github.com/sandersmee/sandersmee.github.io.git~" _config.yml
 
 script:
-- npx hexo generate
+  - npx hexo generate
 
 deploy:
   skip_cleanup: true
