@@ -1,0 +1,86 @@
+---
+title: Override asciidoctor gradle plugin versions
+date: 2022-02-13 20:00:00
+tags:
+  - documentation
+  - gradle
+  - asciidoctor
+  - plantuml
+categories:
+  - Howto
+---
+:1: https://asciidoctor.github.io/asciidoctor-gradle-plugin/master/user-guide/
+:A: https://github.com/asciidoctor/asciidoctor-gradle-plugin/
+:2: https://github.com/asciidoctor/asciidoctor-gradle-plugin/blob/34837b18609821bd85c239453a3111d13c1e0d0a/module-versions.properties
+:3: https://github.com/asciidoctor/asciidoctorj-diagram/blob/cd5816019d8769a9d5918c0082c45d7117ee979a/asciidoctorj-diagram-plantuml/gradle.properties
+:4: https://asciidoctor.github.io/asciidoctor-gradle-plugin/master/user-guide/#asciidoctorj-gems-plugin
+
+As development team we decided to write our documentation with Asciidoc.
+As other parts in our landscape use gradle as the build tool, thus we opted for the asciidoctor-gradle-plugin to generate the documentation.
+The documents have embedded plantuml diagrams describing the architecture, but to our surprise the toolchain did not render them correctly.
+Apparently the diagrams use features of plantuml that are not supported in the version provided by default by the toolchain.
+
+We found out we had to update to later versions of asciidoctorj-diagram and plantuml.
+The version of asciidoctor-gradle-plugin (3.3.2) is now about a year old (from February 2021) and probably its dependencies also.
+Unfortunately it's rather hard to find which versions are used by the asciidoctor-gradle plugin and how to update to newer versions.
+
+++++
+<!-- more -->
+++++
+
+== Finding the default versions
+Going over the {1}[Asciidoctor Gradle Plugin] documentation you can read how to set the version of modules you intend to use.
+But the documentation contains "only" a placeholder version, and not the actual (default) version.
+Continuing the search leads to the asciidoctor-gradle-plugin {A}[source code on github].
+It contains a {2}[`module-versions.properties`] file that contains the version of modules used by the plugin suite.
+Given this file you see the used version of asciidoctorj-diagram is `2.0.5`, and not the latest `2.2.1` as of writing.
+
+[source,gradle]
+.`build.gradle` snippet
+----
+plugins {
+  id 'org.asciidoctor.jvm.pdf' version '3.3.2'
+  id 'org.asciidoctor.jvm.gems' version '3.3.2'
+}
+
+asciidoctorj {
+  version '2.5.3' //<1>
+  modules {
+   diagram.use()
+    diagram.version '2.2.1' // <2>
+  }
+}
+...
+----
+<1> The version of asciidoctorj is also not the latest (2.4.1). Updated to `2.5.3`.
+<2> Update the version of asciidoctorj-diagram to `2.2.1` as that is the latest.
+
+
+== Plantuml used needs an update
+With this you expected the beautiful plantuml diagrams you created, but alas still no success.
+
+Version `2.2.1` of asciidoctorj-diagram a version of plantuml which also isn't the latest greatest.
+Digging further you can discover that asciidoctorj-diagram wraps the ruby gems asciidoctor-diagram and asciidoctor-diagram-plantuml, the latter wrapping plantuml.
+The used version of asciidoctor-diagram-plantuml is declared in a {3}[`gradle.properties`] file and is version `1.2021.8`.
+Using the {4}[Ruby GEM support] of the asciidoctor-gradle you can declare a dependency on the latest asciidoctor-diagram-plantuml gem `1.2022.1`.
+
+[source,gradle]
+.`build.gradle` snippet
+----
+...
+repositories {
+  ruby.gems()
+}
+
+dependencies {
+  asciidoctorGems 'rubygems:asciidoctor-diagram-plantuml:1.2022.1'  // <1>
+}
+...
+----
+<1> Declare the dependency on the asciidoctor-diagram-plantuml gem.
+
+Now you're using the latest version of asciidoctorj-diagram and the latest version of plantuml.
+The result is the beautiful diagrams as expected.
+
+
+Written using gradle 7.3, asciidoctor-gradle 3.2.2,
