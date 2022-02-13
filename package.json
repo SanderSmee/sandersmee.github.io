@@ -30,7 +30,7 @@
     "hexo-reading-time": "~1.0.3",
     "hexo-renderer-marked": "^4.0.0",
     "hexo-renderer-pug": "^1.0.0",
-    "hexo-renderer-sass": "^0.4.0",
+    "hexo-renderer-dartsass": "^0.1.2",
     "hexo-util": "~2.5.0",
     "lodash": "^4.17.21"
   },

@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "bootstrap": "^4.5.3",
+        "bootstrap": "^4.6.1",
         "hexo-pagination": "^1.0.0",
         "hexo-util": "~2.4.0",
         "moment": "^2.29.1",
